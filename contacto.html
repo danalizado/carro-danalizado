@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css"> 
+    <title>Contacto | Deporte Analizado</title>
+</head>
+<body>
+<a href="javascript:history.back()" id="back-button" aria-label="Volver a la página anterior">
+    <span class="icon-arrow">⬅️</span>
+</a>
+ 
+<div id="preloader">
+    <img src="img/logo.png" alt="dep Analizado" class="intro-logo">
+</div>
+
+  <a href="#home" class="scroll-down">
+    
+  </a>
+</section>
+
+
+    <!-- =====================================================
+HEADER
+====================================================== -->
+
+
+<header class="header">
+    
+    <div class="header-left social-links">
+        <a href="https://www.instagram.com/deporteanalizado" target="_blank" aria-label="Instagram" title="Síguenos en Instagram">
+            <img src="img/ig.svg" class="social-icon-img" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@deporteanalizado" target="_blank" aria-label="TikTok" title="Mira nuestros videos en TikTok">
+            <img src="img/tt.png" class="social-icon-img" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com/@DeporteAnalizado" target="_blank" aria-label="YouTube" title="Suscríbete a nuestro canal de YouTube">
+            <img src="img/yt.png" class="social-icon-img" alt="YouTube">
+        </a>
+        <a href="https://www.twitch.tv/futbolanalizado" target="_blank" aria-label="Twitch" title="Síguenos en Twitch">
+            <img src="img/tw.png" class="social-icon-img" alt="Twitch">
+        </a>
+    </div>
+
+
+    <div class="header-center">
+        <span class="brand-title">DEPORTE ANALIZADO</span>
+    </div>
+
+    <nav class="header-right">
+        <ul class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="deportes.html">Deportes</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
+                <span id="carrito-contador" class="contador-vacio">0</span>
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+
+   <main>
+    <section class="contacto-hero">
+        <div class="contenedor">
+
+
+            <h1 class="page-title">CONTACTATE CON NOSOTROS</h1>
+            <p class="subtitle">Despejá tus dudas, realizá tus consultas y comunicate con nosotros!</p>
+
+            <div class="contacto-grid">
+                
+                <div class="contacto-form-container">
+                    <h2>Formulario de Contacto</h2>
+                    <form action="#" method="POST" class="contact-form">
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deporte">Deporte</label>
+                             <select id="deporte" name="deporte" required>
+                                <option value="" disabled selected>Selecciona un deporte</option>
+                                <option value="analisis_rendimiento">Fútbol</option>
+                                <option value="scouting">Rugby</option>
+                                <option value="cursos">Hockey</option>
+                                <option value="videos">Tenis</option>
+                            </select>
+                        </div>
+                       
+                        
+                        <div class="form-group">
+                            <label for="servicio">Servicio</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option value="analisis_rendimiento">Análisis del Rendimiento</option>
+                                <option value="scouting">Scouting</option>
+                                <option value="cursos">Cursos de Capacitación</option>
+                                <option value="videos">Videos Personalizados</option>
+                                <option value="otro">Otro / Consulta General</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Tu Mensaje / Consulta</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                    </form>
+                </div>
+
+                <div class="contacto-info-container">
+                    
+                    <h2>Vías de Contacto Rápido</h2>
+                    <p class="info-intro">¿Necesitas una respuesta inmediata? Contáctanos directamente por estos canales:</p>
+
+                    <ul class="contact-list">
+                        <li>
+                            <a href="       " target="_blank" class="contact-link whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <div class="details">
+                                    <strong>WhatsApp:</strong>
+                                    <span>+54 9 221 544-3394</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="danalizado@gmail.com" class="contact-link email">
+                                <i class="fas fa-envelope"></i>
+                                <div class="details">
+                                    <strong>Email Corporativo:</strong>
+                                    <span>danalizado@gmail.com</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/deporteanalizado" target="_blank" class="contact-link social">
+                                <i class="fab fa-instagram"></i>
+                                <div class="details">
+                                    <strong>Redes Sociales:</strong>
+                                    <span>@deporteanalizado</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="contact-additional-info">
+                        <h3>Información Adicional</h3>
+                        <p>Trabajamos de forma remota y global, ofreciendo atención inmediata.</p>
+                        <p class="note">Buscamos que tengas tu respuesta en el menor tiempo posible.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+      
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="contenedor footer-grid">
+
+        <div class="footer-col footer-branding">
+            <span class="brand-title">DEPORTE ANALIZADO</span>
+            <p class="footer-slogan">Llevamos el deporte al más alto nivel.</p>
+            </div> 
+
+        <div class="footer-col">
+            <h4>Navegación Rápida</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="deportes.html">Deportes</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Servicios de Fútbol</h4>
+            <ul class="footer-links">
+                <li><a href="cursos-futbol.html">Cursos y Formación</a></li>
+                <li><a href="adr-futbol.html">Analisis de rendimiento</a></li>
+                <li><a href="inf-futbol.html">Videos Personalizados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contáctanos</h4>
+            <ul class="footer-links">
+                <li>Email: danalizado@gmail.com</a></li>
+                <li>WhatsApp: <a href="https://wa.me/+5492215443394" target="_blank">+54 9 221 544-3394</a></li>
+                <li class="footer-address">
+                    <p>Ubicación: Buenos Aires, Argentina.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-links footer-socials"> <li><a href="https://www.instagram.com/deporteanalizado">Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@deporteanalizado">TikTok</a></li>
+                <li><a href="https://www.youtube.com/@DeporteAnalizado">YouTube</a></li>
+                <li><a href="https://www.twitch.tv/futbolanalizado">Twitch</a></li>
+            </ul>
+        </div>
+    </div> <div class="footer-bottom">
+        <div class="contenedor">
+            <p>&copy; 2025 DEPORTE ANALIZADO. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Control del Preloader de 2 segundos
+    window.addEventListener("load", () => {
+        const preloader = document.getElementById('preloader');
+        
+        // El tiempo aquí es 2000 milisegundos = 2 segundos
+        setTimeout(() => {
+            preloader.classList.add('hidden'); 
+        }, 2000); 
+    });
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cursos de Rugby | Dep Analizado</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="cursos.css"> 
+</head>
+<body>
+<a href="javascript:history.back()" id="back-button" aria-label="Volver a la página anterior">
+    <span class="icon-arrow">⬅️</span>
+</a>
+    
+<!-- =====================================================
+HEADER
+====================================================== -->
+
+
+<header class="header">
+    
+    <div class="header-left social-links">
+        <a href="https://www.instagram.com/deporteanalizado" target="_blank" aria-label="Instagram" title="Síguenos en Instagram">
+            <img src="img/ig.svg" class="social-icon-img" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@deporteanalizado" target="_blank" aria-label="TikTok" title="Mira nuestros videos en TikTok">
+            <img src="img/tt.png" class="social-icon-img" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com/@DeporteAnalizado" target="_blank" aria-label="YouTube" title="Suscríbete a nuestro canal de YouTube">
+            <img src="img/yt.png" class="social-icon-img" alt="YouTube">
+        </a>
+        <a href="https://www.twitch.tv/futbolanalizado" target="_blank" aria-label="Twitch" title="Síguenos en Twitch">
+            <img src="img/tw.png" class="social-icon-img" alt="Twitch">
+        </a>
+    </div>
+
+
+    <div class="header-center">
+        <span class="brand-title">DEPORTE ANALIZADO</span>
+    </div>
+
+    <nav class="header-right">
+        <ul class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="deportes.html">Deportes</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
+                <span id="carrito-contador" class="contador-vacio">0</span>
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main class="course-page-content">
+
+        <h1 class="page-title title-futbol">Cursos de Rugby</h1>
+
+
+        <section class="individual-courses-section">
+            <h2>Cursos Individuales Disponibles</h2>
+            <div class="courses-grid">
+                
+                <div class="course-card glass-card">
+                    <img src="img/curso integral.png" alt="Curso 1 Título" class="course-img">
+                    <h3>Video Análisis Integral</h3>
+                    <p class="course-desc">Recorrido por todas las áreas del Video Análisis.</p>
+                    <div class="course-footer">
+                        <span class="course-price">$250.000 (Pesos argentinos) - 200 uSd
+
+                        </span>
+                        <button 
+                            class="btn-add-cart small-btn" 
+                            onclick="agregarAlCarrito('curso-r-int')"
+                            style="cursor: pointer;"
+                        >
+                            Añadir al Carrito
+                        </button>
+                                        </div>
+                </div>
+
+        
+        
+        
+            </div>
+
+        </section>
+
+    </main>
+    
+    <!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+    <div class="contenedor footer-grid">
+
+        <div class="footer-col footer-branding">
+            <span class="brand-title">DEPORTE ANALIZADO</span>
+            <p class="footer-slogan">Llevamos el deporte al más alto nivel.</p>
+            </div> 
+
+        <div class="footer-col">
+            <h4>Navegación Rápida</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="deportes.html">Deportes</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Servicios de Fútbol</h4>
+            <ul class="footer-links">
+                <li><a href="cursos-futbol.html">Cursos y Formación</a></li>
+                <li><a href="adr-futbol.html">Analisis de rendimiento</a></li>
+                <li><a href="inf-futbol.html">Videos Personalizados</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contáctanos</h4>
+            <ul class="footer-links">
+                <li>Email: danalizado@gmail.com</a></li>
+                <li>WhatsApp: <a href="https://wa.me/+5492215443394" target="_blank">+54 9 221 544-3394</a></li>
+                <li class="footer-address">
+                    <p>Ubicación: Buenos Aires, Argentina.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-links footer-socials"> <li><a href="https://www.instagram.com/deporteanalizado">Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@deporteanalizado">TikTok</a></li>
+                <li><a href="https://www.youtube.com/@DeporteAnalizado">YouTube</a></li>
+                <li><a href="https://www.twitch.tv/futbolanalizado">Twitch</a></li>
+            </ul>
+        </div>
+    </div> <div class="footer-bottom">
+        <div class="contenedor">
+            <p>&copy; 2025 DEPORTE ANALIZADO. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="carrito-contenedor">
+    <h2>🛒 Tu Carrito de Compras</h2>
+    <ul id="lista-items-carrito">
+        </ul>
+    <p>Total: <span id="carrito-total">$0.00</span></p>
+    <button id="btn-finalizar-compra" style="display: none;">
+        Finalizar Compra
+    </button>
+</div>
+
+<script src="js/carrito.js"></script>
+
+</body>
+</html>

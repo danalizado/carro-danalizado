@@ -1,0 +1,3173 @@
+/* ============================================
+  VARIABLES
+============================================ */
+:root {
+    --bg: #000000;
+    --panel: #0f0f0f;
+    --muted: #161616;
+    --accent: #f4df5a; /* Dorado/Amarillo de Acento */
+    --white: #ffffff;
+    --maxw: 1200px;
+    --radius: 12px;
+    --gap: 20px;
+    --text: #e6e6e6;
+    --glass: rgba(255, 255, 255, 0.05); /* Ligeramente más opaco */
+    --shadow-accent: rgba(244, 223, 90, 0.4);
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Degradado sutil para profundidad en modo oscuro */
+    background-color: var(--bg); /* Aseguramos un color base */
+    
+    /* CAPA DE FONDO 1: Degradado oscuro principal */
+    background-image: linear-gradient(180deg, var(--bg) 0%, #070707 100%); 
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+
+    /* CAPA DE FONDO 2: Malla sutil */
+    /* *** REQUIERE UNA IMAGEN LLAMADA 'grid-pattern.png' *** */
+    /* Si no tienes la imagen, omite las 4 líneas siguientes. */
+    /* background-image: url('img/grid-pattern.png'), linear-gradient(180deg, var(--bg) 0%, #070707 100%); 
+    background-repeat: repeat; 
+    background-size: 300px, cover; 
+    opacity: 0.05; */
+
+    color: var(--text);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Solo el degradado base para el fondo del body */
+    background: linear-gradient(180deg, var(--bg) 0%, #070707 100%); 
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+    color: var(--text);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+/* ============================================
+  CONTENEDOR GLOBAL
+============================================ */
+.contenedor {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    /* Reducimos el padding horizontal para el contenedor central */
+    padding: 30px 20px; 
+}
+
+/* ============================================
+  PORTADA FULLSCREEN (INTRO)
+============================================ */
+.intro-hero {
+    height: 100vh;
+    width: 100%;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Aseguramos que cubra la pantalla hasta que se oculte */
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    opacity: 1;
+    transition: opacity 0.9s ease, visibility 0s 0.9s;
+
+    /* ============================================
+  PORTADA FULLSCREEN (INTRO)
+============================================ */
+ .intro-hero {
+    /* ... reglas existentes ... */
+    transition: opacity 0.9s ease, visibility 0s 0.9s;
+}
+}
+
+.intro-logo {
+    width: 330px;
+    filter: drop-shadow(0px 0px 10px var(--shadow-accent));
+    animation: fadeIn 1.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Este padding empuja el contenido hacia abajo, evitando que el header fijo lo tape */
+.deporte-individual-hero {
+    /* ... (resto de estilos de esta sección) ... */
+    
+    /* VALOR CRUCIAL: 100px compensa la altura de tu Header */
+    padding-top: 100px; 
+    
+    /* ... (resto de estilos de esta sección) ... */
+}
+
+/* ============================================
+    UNIFICACIÓN DE FONDOS
+============================================ */
+
+/* SECCIÓN 2: Imagen, Texto y Botones */
+.presentacion-seccion-dos {
+    /* Mantenemos otros estilos, pero aseguramos que el fondo sea transparente */
+    /* Si tenías background-color: #1a1a1a; aquí, quítalo o cámbialo a transparent */
+    background-color: transparent;
+    /* ... (otros estilos) ... */
+}
+
+/* SECCIÓN DEPORTES (Resumen) */
+.section-sports {
+    /* Aseguramos que el fondo sea transparente para heredar del body */
+    background-color: transparent;
+    /* ... (otros estilos) ... */
+}
+
+/* PÁGINA DE SERVICIOS (Si la tienes) */
+.servicios-page-hero {
+    /* Aseguramos que el fondo sea transparente para heredar del body */
+    background-color: transparent;
+    /* ... (otros estilos) ... */
+}
+
+/* ============================================
+   3. HEADER / NAVEGACIÓN - CON LÍNEA AMARILLA Y MEJORA DE LOGOS
+============================================ */
+.header {
+    width: 100%;
+    padding: 18px 40px;
+    
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(12px); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    
+    /* 💥 LÍNEA AMARILLA DE ACENTO 💥 */
+    border-bottom: 3px solid var(--accent); 
+    border-image: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%) 1;
+    
+    transition: all .35s ease;
+}
+
+/* --- ESTILOS SOCIALES (MODIFICADO PARA IMAGEN PNG) --- */
+
+.social-links { 
+    display: flex; 
+    gap: 12px; 
+    justify-self: start; 
+}
+
+/* 💥 NUEVA CLASE PARA LOGOS PNG 💥 */
+.social-icon-img { 
+    width: 28px; 
+    height: 28px; 
+    /* La imagen PNG no necesita la propiedad 'color' */
+    transition: transform 0.3s ease, filter 0.3s ease; 
+    
+    /* Efecto para que la imagen PNG se vea brillante desde el inicio */
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) grayscale(10%); 
+}
+
+.social-icon-img:hover { 
+    /* Efecto al hacer hover: Más grande y glow intenso */
+    transform: translateY(-2px) scale(1.15); 
+    filter: drop-shadow(0 0 10px var(--shadow-accent)) grayscale(0%); /* Glow dorado y color total */
+}
+
+/* Nota: La clase .header mantiene su estilo con la línea amarilla. */
+
+/* --- MARCA Y NAV --- */
+.header-center { justify-self: center; }
+.header-right { justify-self: end; }
+.brand-title { font-size: 25px; font-weight: 900; color: var(--accent); letter-spacing: 2px; text-shadow: 0 0 12px var(--shadow-accent); transition: 0.3s ease; }
+.brand-title:hover { color: var(--white); text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px var(--accent); }
+.nav-menu { list-style: none; display: flex; gap: 34px; align-items: center; }
+.nav-menu a, .dropbtn { color: var(--text); text-decoration: none; font-size: 17px; font-weight: 500; letter-spacing: .6px; background: none; border: none; cursor: pointer; position: relative; padding-bottom: 4px; transition: all .25s ease; }
+.nav-menu a:hover, .dropbtn:hover { color: var(--accent); text-shadow: 0 0 8px var(--shadow-accent); transform: translateY(-1px); }
+.nav-menu a::after, .dropbtn::after { content: ""; position: absolute; bottom: -3px; left: 0; width: 0%; height: 2px; background: var(--accent); transition: 0.28s ease; }
+.nav-menu a:hover::after, .dropbtn:hover::after { width: 100%; }
+.cart-icon { font-size: 22px; transition: .2s; }
+.cart-icon:hover { color: var(--accent); transform: scale(1.15); }
+
+/* Oculto solo durante la portada (solo si lo quieres flotante) */
+.header.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+/* Variables de ejemplo (asumidas) */
+:root {
+    --accent: #f4df5a; /* Amarillo */
+    --shadow-accent: rgba(244, 223, 90, 0.8);
+    --glass: rgba(255, 255, 255, 0.05);
+    --radius: 12px;
+    --bg: #0d0d0d;
+    --white: #ffffff;
+}
+
+/* ============================================
+    PRESENTACION (HERO) - DISEÑO VERTICAL CENTRADO (SECCIÓN 1: TÍTULO Y CARDS)
+============================================ */
+.presentacion {
+    width: 100%;
+    min-height: 100vh; 
+    /* MODIFICACIÓN: Reducir el padding superior (150px -> 80px) para subir el contenido */
+    padding: 100px 0; 
+    box-sizing: border-box; 
+    position: relative; 
+    z-index: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* Mantiene el contenido centrado verticalmente respecto a la nueva altura/padding */
+}
+
+
+.presentacion-container {
+    max-width: 100%; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    /* Gap y padding están muy reducidos, lo cual ya cumple tu deseo de que estén cerca */
+    gap: 10px; 
+    padding: 10px 10px; 
+    text-align: center;
+}
+/* TAMAÑO DE LA TARJETA CONTENEDORA */
+.p-card {
+    background: var(--glass);
+    /* Aumentamos el padding para que el contenido respire */
+    padding: 20px 20px; 
+    border-radius: var(--radius);
+    /* 🚀 REDUCIMOS EL TAMAÑO: De 420px a 360px para mayor balance */
+    height: 420px; 
+    width: 560px; 
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.p-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--shadow-accent); /* Efecto de luz más neón */
+    transform: translateY(-5px); /* Añadimos un pequeño efecto de elevación al hacer hover */
+}
+
+/* ICONO/IMAGEN DENTRO DE LA TARJETA */
+.p-card .p-icon {
+    /* 🚀 REDUCCIÓN DEL TAMAÑO: De 300px a 150px (mitad) */
+    width: 270px; 
+    height: 270px; 
+    /* Cambiamos a 'contain' si los iconos son logos o gráficos,
+       para evitar el corte forzado que hace 'cover'. */
+    object-fit: contain; 
+    /* Reducimos el margen inferior ya que la imagen es más pequeña */
+    margin-bottom: 5px; 
+    /* Hacemos el borde más sutil (si tienes imágenes cuadradas) */
+    border-radius: 10px; 
+    /* Mantenemos el filtro */
+    filter: drop-shadow(0 0 5px var(--shadow-accent));
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* NÚMERO (+50, 10, 4) */
+.p-card h3 {
+    /* 🚀 HACEMOS EL NÚMERO MÁS GRANDE para destacarlo */
+    font-size: 45px; 
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--shadow-accent);
+    /* Ajustamos el margen para que esté cerca de la descripción */
+    margin: 15px 0 8px 0; 
+}
+
+/* DESCRIPCIÓN */
+.p-card p {
+    font-size: 16px; /* Ligeramente más pequeña para contraste con el número */
+    color: #ccc;
+    line-height: 1.4; /* Aumentamos la altura de línea para mejor lectura */
+}
+
+
+/* ============================================
+    SECCIÓN DOS: IMAGEN, TEXTOS, BOTONES
+============================================ */
+.presentacion-seccion-dos {
+    width: 100%;
+    /* Aseguramos que ocupe una página completa y se centre */
+    min-height: 100vh; 
+    padding: 10px 0; 
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; 
+    /* Usamos Flexbox para centrar el único contenedor de contenido */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+}
+
+
+
+/* ============================================
+    AJUSTES DE CONTENEDORES PARA CENTRADO
+============================================ */
+/* Contenedor del Título y Subtítulo */
+.header-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Las tarjetas deben centrarse y ser horizontales (display: flex) */
+.presentacion-cards {
+    display: flex;
+    gap: 22px;
+    justify-content: center; 
+    /* Aseguramos que no se envuelvan en pantallas grandes (horizontal) */
+    flex-wrap: nowrap; 
+    width: 100%; 
+    max-width: 1200px;
+}
+
+/* Contenedor de Textos (preguntas) - Aseguramos centrado de bloque */
+.presentacion-extra {
+    max-width: 100%; 
+    text-align: center; /* Centramos las preguntas */
+    margin: 0;
+}
+
+.presentacion-desc {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    /* Las descripciones deben alinearse a la izquierda si el contenedor es estrecho */
+    text-align: left; 
+    /* AJUSTE 2: Aumentamos el ancho máximo de los textos para menos renglones */
+    max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de Botones - Centrar */
+.presentacion-cta-right {
+    display: flex;
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; /* Para que los botones se envuelvan en pantallas pequeñas */
+}
+
+
+/* ============================================
+    ESTILO DE LA LISTA DE TIPS (SECCIÓN 2)
+============================================ */
+
+/* Contenedor de la lista */
+.presentacion-extra {
+    /* Centra el contenedor completo de la lista */
+    text-align: center; 
+}
+
+/* Estilos de la lista (el <ul>) */
+.presentacion-list {
+    list-style: none;
+    padding: 5;
+    margin: 0;
+    font-size: 1.15em;
+    line-height: 1.6;
+    
+    /* 🚀 MODIFICACIÓN CLAVE: Usar Flexbox para alinear ítems horizontalmente */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los ítems bajen a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los ítems horizontalmente dentro del <ul> */
+    gap: 10px; /* Añade espacio entre los ítems (horizontal y verticalmente si hay salto de línea) */
+}
+
+/* Estilos de cada ítem de la lista (el <li>) */
+.presentacion-list li {
+    position: relative;
+    /* 🚀 MODIFICACIÓN 1: Aumentar el padding para separar el ícono del texto */
+    padding-left: 35px; /* Aumentado de 25px a 35px */
+    margin-bottom: 5px; 
+    color: #f0f0f0;
+    flex-shrink: 0; 
+}
+/* El ::before (el ícono) se mantiene en left: 0, por lo que el padding ahora lo aleja más. */
+
+
+
+
+/* Estilo de la Viñeta Personalizada (el 'Tip' o Checkmark) */
+.presentacion-list li::before {
+    content: "✅"; 
+    color: var(--accent, #ffd700); 
+    font-size: 1.2em;
+    position: absolute;
+    left: 0; 
+    /* Ajustar top para centrar verticalmente el ícono con el texto */
+    top: 50%; 
+    transform: translateY(-50%); /* Ajuste fino de centrado vertical */
+}
+
+/* Contenedor de la lista */
+.presentacion-extra {
+    text-align: center; 
+    /* 🚀 MODIFICACIÓN 2 & 3: Añadir margen superior e inferior */
+    margin-top: 40px;    /* Más espacio arriba, separándose de la imagen */
+    margin-bottom: 40px; /* Más espacio abajo, separándose de los botones */
+    /* Asegúrate de que esta celda del grid tenga espacio suficiente */
+}
+
+/* ============================================
+    ESTILOS ESPECÍFICOS (Mantenidos y ajustados)
+============================================ */
+
+/* AJUSTE: TÍTULO */
+.presentacion-title {
+    font-size: 60px; 
+    font-weight: 900;
+    line-height: 1.0; 
+    color: var(--white);
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); 
+}
+
+/* AJUSTE: SUBTÍTULO */
+.presentacion-sub {
+    color: #ffffff;
+    font-size: 19px; 
+    /* AJUSTE 1: Reducimos el margen inferior de 50px a 30px */
+    margin-bottom: 40px; 
+    letter-spacing: 1px;
+}
+.presentacion-title span {
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--shadow-accent);
+}
+
+
+
+/* La Imagen Principal */
+.presentacion-img {
+ max-width: 100%; 
+ height: 450px;
+ border-radius: 20px;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); 
+    /* Centrado */
+    display: block;
+    margin: 0 auto; 
+}
+
+/* Botones CTA (Mantenemos los estilos originales) */
+.btn-big-yellow {
+    background-color: var(--accent);
+    color: #000;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.9s ease;
+}
+
+.btn-big-yellow:hover {
+    box-shadow: 0 8px 25px var(--shadow-accent);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+    FONDO Y MEDIA QUERIES
+============================================ */
+
+/* CLAVE: Aplicamos el fondo de logo a las dos nuevas secciones */
+.presentacion::before, .presentacion-seccion-dos::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
+    background: url('img/logo.png') no-repeat center center;
+    
+    background-size: 550px; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    
+    opacity: 0.10;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+
+/* Adaptación a dispositivos más pequeños (Móvil/Tablet) */
+@media (max-width: 1000px) {
+    .presentacion-cards {
+        /* Las cards se apilan en móvil */
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .p-card {
+        /* Permite que las cards ocupen más espacio en móvil */
+        width: 45%; 
+        max-width: 250px;
+    }
+    .presentacion-title {
+        font-size: 52px;
+    }
+    .presentacion-sub {
+        font-size: 20px;
+    }
+    .presentacion-container, .presentacion-right-content {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 550px) {
+    .p-card {
+        /* Cada card toma el 80% del ancho en pantallas muy pequeñas y se apilan totalmente */
+        width: 80%;
+    }
+    .presentacion-title {
+        font-size: 38px;
+    }
+    .presentacion-sub {
+        font-size: 18px;
+    }
+    .presentacion-cta-right {
+        flex-direction: column; /* Apila los botones */
+        width: 100%;
+    }
+    .btn-big-yellow {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
+/* ============================================
+    SECCIÓN DEPORTES (RESUMEN EN HOME)
+============================================ */
+.section-sports {
+    min-height: 100vh;
+    padding: 20px 0;
+    background-color: transparent;
+    color: white;
+    /* Necesario para centrar el contenido verticalmente */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    /* Añadir el logo de fondo a la sección de Deportes del Index */
+.section-sports {
+    /* ... (estilos existentes) ... */
+    position: relative; 
+    z-index: 1; 
+}
+
+.section-sports::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('img/logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 550px; 
+    /* Usamos la solución de inversión de color */
+    opacity: 0.20; 
+    filter: invert(100%) brightness(1.8) drop-shadow(0 0 8px var(--shadow-accent)); 
+    z-index: -1; 
+    pointer-events: none;
+}
+}
+
+.sports-content {
+    width: 100%;
+    /* 🚀 MODIFICACIÓN: ELIMINADO MAX-WIDTH para usar todo el ancho de la pantalla */
+    /* max-width: 1800px; <-- Línea eliminada o comentada */
+    max-width: none;
+    padding: 0 40px;
+    text-align: center;
+}
+
+/* El grid-deportes-resumen también puede ajustarse para usar más ancho */
+.grid-deportes-resumen {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px; 
+    width: 100%; 
+    /* 🚀 MODIFICACIÓN: Aseguramos que el grid también use más ancho */
+    max-width: 1600px; /* Puedes subir este valor (ej. 2000px) o eliminarlo si quieres que las tarjetas se separen mucho en monitores gigantes */
+    margin: 0 auto 50px auto; 
+}
+
+/* ... (Los estilos de las tarjetas deporte-resumen-card se mantienen iguales) ... */
+
+.section-title.title-white {
+    font-size: 3.5em;
+    font-weight: 800;
+    color: var(--accent, #ffd700);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-bottom: 50px;
+}
+
+
+
+.deporte-resumen-card {
+    /* 🚀 MODIFICACIÓN: Flexbox ajustado para que quepan 4 */
+    flex: 1 1 300px; /* Crece/Encoge, con un tamaño ideal de 300px */
+    height: 240px; /* Mantienes el alto que te gustó */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+
+    background-color: var(--glass, rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    padding: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.deporte-resumen-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.deporte-resumen-card img {
+    /* 💥 CORRECCIÓN: Tamaño de logo reducido para caber en la tarjeta */
+    width: 100px; 
+    height: 100px; /* Igual que en la página específica */
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.deporte-resumen-card h3 {
+    font-size: 1.8em; 
+    font-weight: 700;
+    color: var(--white, #ffffff);
+    margin: 0;
+}
+
+.center-cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ============================================
+PAGINA ESPECIFICA DEPORTES
+============================================ */
+
+.deportes-page-hero {
+    padding-top: 150px; 
+    padding-bottom: 100px;
+    text-align: center;
+    min-height: 100vh;
+    
+    /* CRÍTICO: Para el logo de fondo */
+    position: relative; 
+    z-index: 1; 
+}
+
+
+/* 🚀 SOLUCIÓN FINAL: PSEUDO-ELEMENTO PARA EL LOGO DE FONDO (Corregido) */
+.deportes-page-hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* 💥 PROPIEDADES CRÍTICAS QUE FALTABAN O ESTABAN MAL: */
+    width: 100%; /* El pseudo-elemento debe tener tamaño */
+    height: 100%; /* Ocupa todo el espacio de la sección */
+
+    /* Ruta del Logo y Repetición */
+    background-image: url('img/logo.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 550px; /* Tamaño del logo en el fondo */
+
+    /* Efectos y Profundidad */
+    opacity: 0.12; 
+    filter:  drop-shadow(0 0 8px var(--shadow-accent)); 
+    z-index: -1; /* Lo manda detrás del contenido */
+    pointer-events: none;
+}
+
+
+/* ... (resto del CSS) ... */
+
+.page-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--shadow-accent); 
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: var(--text); 
+    margin-bottom: 50px;
+}
+
+.grid-deportes {
+    display: grid;
+    /* 🚀 MODIFICACIÓN 3: SIEMPRE 2 COLUMNAS EN ESCRITORIO */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Asegura suficiente espacio */
+    margin: 40px auto;
+}
+
+.deporte-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--glass); 
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.deporte-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px var(--shadow-accent); 
+    border-color: var(--accent);
+}
+
+.deporte-logo {
+    width: 100px; 
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); 
+}
+
+.deporte-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--shadow-accent);
+}
+
+/* Responsive para la página de Deportes */
+/* 🚀 MODIFICACIÓN 4: AJUSTE DE MEDIA QUERIES */
+@media (max-width: 600px) { /* Pasa a 1 columna en pantallas pequeñas */
+    .grid-deportes {
+        grid-template-columns: 1fr; 
+    }
+    .page-title {
+        font-size: 40px;
+    }
+}
+
+
+/* ============================================
+    PÁGINA ESPECÍFICA: SERVICIOS
+============================================ */
+
+.servicios-page-hero {
+    /* Fondo oscuro y estructura Hero */
+    padding-top: 150px; 
+    padding-bottom: 100px;
+    background-color: var(--bg, #0a0a0a); 
+    color: var(--white);
+    text-align: center;
+    min-height: 100vh;
+    position: relative; 
+    z-index: 1; 
+}
+
+/* 💥 LOGO DE FONDO TRANSPARENTE, CENTRADO Y CLARO */
+.servicios-page-hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Centra el elemento en el medio */
+    transform: translate(-50%, -50%); 
+    
+    /* Configuración de la imagen */
+    background-image: url('img/logo.png'); /* ⚠️ VERIFICA LA RUTA */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 550px; /* Tamaño grande para marca de agua */
+    
+    /* Filtros para hacerlo CLARO y TRANSPARENTE sobre fondo oscuro */
+    opacity: 0.15; /* Baja opacidad para que sea muy sutil */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); 
+    
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lo enviamos detrás de todo el contenido */
+    pointer-events: none;
+}
+
+/* 1. TÍTULOS Y SUBTÍTULOS */
+.servicios-page-hero .page-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--accent, #f4df5a);
+    text-shadow: 0 0 15px var(--shadow-accent, rgba(244, 223, 90, 0.7)); 
+    margin-bottom: 10px;
+}
+.servicios-page-hero .subtitle {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. ESTRUCTURA DEL GRID */
+.grid-servicios-detalle {
+    display: grid;
+    /* Tres columnas en desktop */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px; 
+    margin: 40px auto;
+}
+
+/* 3. ESTILO DE LA TARJETA DETALLE */
+.servicio-detalle-card {
+    /* Estilo Glassmorphism Oscuro */
+    background: rgba(15, 15, 15, 0.8); 
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    
+    /* Borde neón sutil y animación */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    
+    /* Para manejar los elementos internos (iconos de deporte al final) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* 4. EFECTO HOVER NEÓN */
+.servicio-detalle-card:hover {
+    transform: translateY(-8px); /* Efecto de levantamiento notable */
+    /* Borde más brillante y sombra neón */
+    border-color: var(--accent, #f4df5a);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--shadow-accent, rgba(244, 223, 90, 0.8));
+}
+
+/* 5. ICONO GRANDE */
+.servicio-detalle-card .icon-big {
+    font-size: 60px;
+    margin-bottom: 15px;
+    /* Damos el mismo color de acento al emoji si es posible */
+    color: var(--accent, #f4df5a); 
+    /* Sombra para que el emoji (o span) parezca neón */
+    text-shadow: 0 0 15px var(--shadow-accent, rgba(244, 223, 90, 0.8));
+}
+
+/* 6. TÍTULO DEL SERVICIO */
+.servicio-detalle-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* 7. DESCRIPCIÓN */
+.servicio-detalle-card p {
+    font-size: 16px;
+    color: #b0b0b0;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Permite que el texto se estire para igualar la altura de las tarjetas */
+}
+
+/* 8. CONTENEDOR DE ENLACES DE DEPORTE */
+.deporte-links {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    margin-top: auto; /* Empuja los enlaces de deporte al fondo de la tarjeta */
+}
+
+/* 9. ICONOS DE DEPORTE (Fútbol, Rugby, etc.) */
+.deporte-links .deporte-icon-img {
+    /* 🚀 AUMENTO DE TAMAÑO: DE 40px A 50px */
+    width: 70px; 
+    height: 70px;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+    border-radius: 50%;
+}
+
+.deporte-links a:hover .deporte-icon-img {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--shadow-accent, rgba(244, 223, 90, 0.5));
+}
+
+
+/* ============================================
+    RESPONSIVE: SERVICIOS
+============================================ */
+
+@media (max-width: 900px) {
+    .grid-servicios-detalle {
+        /* Pasa de 3 a 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-servicios-detalle {
+        /* Pasa a 1 columna en móviles */
+        grid-template-columns: 1fr; 
+        padding: 0 20px;
+    }
+    .servicios-page-hero .page-title {
+        font-size: 40px;
+    }
+    .servicios-page-hero .subtitle {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+  ESTRUCTURA DE SECCIONES DE DETALLE DEPORTIVO (FÚTBOL)
+============================================ */
+
+/* FONDO GLOBAL DE LA SECCIÓN: Ancho completo, patrón de puntos */
+.seccion-servicios-detalle-futbol, .seccion-servicios-detalle-rugby,
+.seccion-servicios-detalle-hockey,  /* <--- ¡AÑADIR RUGBY! */
+.seccion-servicios-detalle-tenis{
+    padding: 80px 0; /* Padding vertical, sin horizontal */
+    position: relative;
+    z-index: 1;
+    /* 2. Sombra interna para el efecto "pozo" */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Títulos de sección: Centrados y con padding lateral */
+.seccion-servicios-detalle-futbol .section-title,
+.seccion-servicios-detalle-futbol .section-subtitle {
+    text-align: center;
+    color: #f4df5a;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Damos padding lateral a los títulos */
+}
+.seccion-servicios-detalle-futbol .section-title {
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+.seccion-servicios-detalle-futbol .section-subtitle {
+    margin-bottom: 60px;
+}
+
+/* Separador visual (se oculta porque los bloques tienen margen) */
+.servicio-separator {
+    display: none; 
+}
+
+
+/* ============================================
+  ESTILOS DE CADA BLOQUE DE SERVICIO (TARJETAS)
+============================================ */
+
+.servicio-detalle-bloque {
+    /* 1. Estructura de contenido */
+    max-width: 1200px; 
+    margin: 0 auto 40px auto; /* Centrado y separación inferior */
+    padding: 60px 20px; 
+    
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Info más ancha que la imagen */
+    gap: 80px;
+    align-items: center;
+    
+    /* 2. Estilo de Tarjeta Flotante */
+    background-color: rgba(10, 10, 10, 0.85); /* Gris oscuro semi-transparente */
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra para que flote */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borde sutil */
+    position: relative;
+    overflow: hidden; 
+}
+
+/* MARCA DE AGUA INDIVIDUAL (::after) */
+.servicio-detalle-bloque::after {
+     content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Mantenemos el translate para asegurar el centrado */
+    transform: translate(-50%, -50%); 
+    
+    background: url('img/logo.png') no-repeat center center;
+    
+    /* 💥 CAMBIOS APLICADOS: TAMAÑO Y REPETICIÓN 💥 */
+    background-size: 550px; /* Tamaño unificado */
+    background-repeat: no-repeat; /* Aseguramos que no se repita */
+    background-position: center center; /* Posición unificada */
+    
+    opacity: 0.10;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* 1. CURSOS Y CAPACITACIONES */
+#cursos::after {
+    background-position: 50% center; /* Derecha */
+    background-size: 350px; 
+}
+
+/* MODIFICACIONES PARA EL AVATAR (Ahora funciona con VIDEO o IMAGEN) */
+.meta-avatar {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; /* Hacerlo circular */
+    
+    /* 💥 CLAVE: Asegura que el video llene el círculo sin distorsionarse 💥 */
+    object-fit: cover; 
+    
+    /* Asegura que el video no tape el borde ni el box-shadow */
+    overflow: hidden; 
+    
+    /* Borde neón sutil para destacarlo */
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 10px var(--shadow-accent);
+}
+
+/* 2. ANÁLISIS DEL RENDIMIENTO */
+#analisis::after {
+    background-position: 50% center; /* Izquierda */
+    background-size: 350px; /* Un poco más grande para variar */
+}
+
+/* 3. SCOUTING Y CAPTACIÓN */
+#scouting::after {
+    background-position: 50% center; /* Abajo y Centrado */
+    background-size: 350px;
+}
+
+/* 4. INFORME PREMIUM (VIDEO) */
+#videos::after {
+    background-position: 50% center; /* Arriba y Centrado */
+    background-size: 350px;
+}
+
+
+/* ============================================
+  ESTILOS DE TEXTO E IMAGENES (Mantenidos)
+============================================ */
+
+/* Alternar el orden de las columnas */
+.servicio-detalle-bloque.reverse-order {
+    grid-template-areas: "imagen info";
+}
+.servicio-detalle-bloque.reverse-order .servicio-info-left {
+    grid-area: info;
+}
+.servicio-detalle-bloque.reverse-order .servicio-imagen-right {
+    grid-area: imagen;
+}
+
+/* Título de cada servicio */
+.servicio-title {
+    font-size: 32px;
+    font-weight: 1000;
+    /* CAMBIO AQUÍ: Aplicamos el color amarillo */
+    color: #f4df5a; 
+    margin-bottom: 20px;
+}
+
+/* Descripción */
+.servicio-desc {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Lista de características (Features) */
+.servicio-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.servicio-features li {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.servicio-features .icon {
+    font-size: 18px;
+    color: var(--accent);
+    margin-right: 10px;
+    filter: drop-shadow(0 0 2px var(--shadow-accent));
+}
+
+/* Imagen del Servicio */
+.servicio-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+.servicio-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px var(--shadow-accent); 
+}
+
+/* Estilo para las imágenes del lado derecho (ya estaban bien) */
+.servicio-imagen-right img {
+    max-width: 100%; 
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+    border-radius: var(--radius); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+}
+
+/* Busca la sección de las marcas de agua individuales y añade esto al final: */
+
+/* MARCA DE AGUA INDIVIDUAL para RUGBY */
+.seccion-servicios-detalle-rugby .servicio-detalle-bloque::after {
+    background-image: url('img/R.png'); 
+    background-repeat: no-repeat;
+    opacity: 0.15; /* Se ve un poco más que 0.05 */
+    filter: grayscale(100%);
+}
+
+/* Y si tienes los otros, añádelos también: */
+.seccion-servicios-detalle-hockey .servicio-detalle-bloque::after {
+    background-image: url('img/h.png'); 
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    filter: grayscale(100%);
+}
+/* etc. */
+/* Y si tienes los otros, añádelos también: */
+.seccion-servicios-detalle-tenis .servicio-detalle-bloque::after {
+    background-image: url('img/t.png'); 
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    filter: grayscale(100%);
+}
+/* etc. */
+
+/* ============================================
+  ESTILOS DE BOTONES
+============================================ */
+
+/* Botón Principal (Amarillo) */
+.btn-yellow {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    
+    /* Colores y Fondo */
+    background-color: #f4df5a; /* Tu color amarillo */
+    color: #1a1a1a; /* Texto oscuro sobre amarillo */
+    border: none;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    cursor: pointer;
+    
+    /* Sombra para efecto "elevado" */
+    box-shadow: 0 4px 15px rgba(244, 223, 90, 0.4); 
+    
+    /* Transición suave para el hover */
+    transition: all 0.3s ease;
+    
+    /* Evitar que el texto se mueva */
+    line-height: 1.5;
+    text-decoration: none; /* Asegura que no tenga subrayado */
+}
+
+.btn-yellow:hover {
+    background-color: #ffe640; /* Amarillo un poco más claro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de ligero levantamiento */
+    box-shadow: 0 8px 20px rgba(244, 223, 90, 0.6); /* Sombra más fuerte */
+}
+
+
+
+/* ============================================
+  RESPONSIVE
+============================================ */
+
+@media (max-width: 900px) {
+    .servicio-detalle-bloque {
+        /* Pasa a una sola columna */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    .servicio-detalle-bloque .servicio-info-left {
+        order: 2; /* Texto abajo en móvil */
+    }
+    .servicio-detalle-bloque .servicio-imagen-right {
+        order: 1; /* Imagen arriba en móvil */
+    }
+    /* Reinicia el orden de las columnas para móvil */
+    .servicio-detalle-bloque.reverse-order .servicio-info-left,
+    .servicio-detalle-bloque.reverse-order .servicio-imagen-right {
+        grid-area: unset;
+    }
+    
+    .servicio-title {
+        font-size: 32px;
+    }
+    
+    /* Ocultamos las marcas de agua individuales en móvil */
+    .servicio-detalle-bloque::after {
+        display: none;
+    }
+}
+
+/* ============================================
+  PÁGINA DE DEPORTE INDIVIDUAL
+============================================ */
+
+/* Estilos de la sección principal (Hero) */
+.deporte-individual-hero {
+    position: relative;
+    padding-top: 150px; 
+    padding-bottom: 80px;
+    color: var(--white);
+    /* CLAVE: Imagen de fondo para cada deporte */
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+}
+
+/* Oscurece la imagen de fondo para que el texto resalte */
+.deporte-individual-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75); /* Capa oscura */
+    z-index: 1;
+}
+
+.deporte-individual-hero > .contenedor {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre la capa oscura */
+}
+
+.deporte-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para el texto, 1/3 para la imagen/icono */
+    gap: 50px;
+    align-items: center;
+    text-align: left;
+}
+
+.deporte-page-title {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.deporte-page-subtitle {
+    font-size: 24px;
+    color: #ccc;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Contenedor de los 4 botones */
+.deporte-cta-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en filas si el espacio es reducido */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Estilo para cada botón de servicio */
+.cta-service-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.cta-service-btn span {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+/* Botón de color principal (Amarillo) */
+.btn-yellow {
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 2px solid var(--accent);
+}
+.btn-yellow:hover {
+    background-color: #fce360; 
+}
+
+/* Botón Outline (Contorno) */
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.deporte-icon-big {
+    width: 250px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .deporte-content-grid {
+        /* Pasa a una sola columna */
+        grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 30px;
+    }
+    .deporte-left {
+        order: 2; /* Mueve el texto debajo de la imagen en móvil */
+        align-items: center;
+    }
+    .deporte-right {
+        order: 1; /* Mueve la imagen arriba del texto en móvil */
+        text-align: center;
+    }
+    .deporte-icon-big {
+        margin: 0 auto;
+    }
+    .deporte-page-title {
+        font-size: 60px;
+    }
+    .deporte-cta-buttons {
+        justify-content: center; /* Centra los botones en móvil */
+    }
+}
+
+
+/* ============================================
+    SECCIÓN SERVICIOS (RESUMEN EN INDEX)
+============================================ */
+.seccion-servicios-resumen {
+    position: relative; 
+    overflow: hidden;
+    z-index: 1;
+}
+
+.seccion-servicios-resumen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('img/logo.png');
+    background-repeat: no-repeat; 
+    
+    background-position: center center; 
+    background-size: 550px;
+    
+    opacity: 0.10; 
+    filter: grayscale(100%); 
+    z-index: -1; 
+    pointer-events: none;
+}
+/* Usamos las clases .section-title y .section-subtitle de la sección Deportes */
+
+.grid-servicios-resumen {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 30px;
+    /* Mantenemos el ancho máximo (1400px) */
+    max-width: 1400px; 
+    margin: 40px auto 50px auto; 
+}
+
+.servicio-resumen-card {
+    /* 🚀 CORRECCIÓN CLAVE para ver 3 columnas: */
+    /* 1. Cambiamos el 'flex: 1 1 1000px;' a un ancho mucho menor. */
+    /* 2. Usamos 'flex: 1 1 350px;' para que cada tarjeta tenga un ancho base de 350px.
+          Esto permite que quepan 3 o más en la fila. */
+    flex: 1 1 350px; 
+    
+    /* 3. Eliminamos o reducimos el max-width, que estaba forzando el apilamiento. */
+    max-width: 400px; /* Un límite sensato para que no se estiren demasiado */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #1a1a1a;
+    padding: 40px 30px; 
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-top: 5px solid transparent; 
+    text-align: center;
+    height: 100%;
+}
+
+.servicio-resumen-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--accent); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. AÑADE O MODIFICA EL ESTILO PARA LA NUEVA IMAGEN */
+.servicio-resumen-card .servicio-icon {
+    /* Define el tamaño de tus nuevos iconos */
+    width: 300px; /* Ajusta según el tamaño que desees */
+    height: 300px; /* Mismo valor para mantener proporción cuadrada */
+    object-fit: contain;
+    margin-bottom: 15px;
+    
+    /* Si quieres que se vean con un efecto de luz, puedes añadir un filtro: */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    transition: transform 0.3s;
+}
+
+/* 3. OPCIONAL: Efecto hover si lo deseas */
+.servicio-resumen-card:hover .servicio-icon {
+    transform: scale(1.1);
+}
+
+.servicio-resumen-card h3 {
+    /* 🚀 AUMENTO DE TAMAÑO: Cambiado de 22px a 28px */
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.servicio-resumen-card p {
+    font-size: 16px;
+    color: #ccc;
+    flex-grow: 1; /* Permite que el párrafo crezca para igualar la altura de las tarjetas */
+}
+
+/* Responsive para que se vea bien en diferentes dispositivos */
+/* 🛑 MODIFICACIÓN IMPORTANTE EN MÓVILES: Eliminamos el 'flex-direction: column;' 
+   que estaba causando conflicto, ya que el contenedor principal ya usa 'flex-wrap'. */
+@media (max-width: 500px) {
+    .grid-servicios-resumen {
+        /* Aquí ya NO es necesario forzar flex-direction: column; si el 'flex-wrap' 
+           y el ancho de la tarjeta obligan a apilarse, pero lo mantenemos simple. */
+        flex-wrap: wrap; 
+        align-items: center;
+    }
+
+    .servicio-resumen-card {
+        /* Aseguramos que la tarjeta ocupe todo el ancho disponible en móvil (380px o 90%) */
+        width: 90%; 
+        max-width: 90%; 
+        /* Flexbox simple para asegurar que ocupe todo el ancho sin forzar la fila */
+        flex: 0 0 90%; 
+    }
+}
+
+/* Si mantienes el HTML con .btn-big-outline, este será el estilo neón outline */
+.btn-big-outline {
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    color: var(--accent, #ffd700);
+    border: 2px solid var(--accent, #ffd700);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px var(--shadow-accent, rgba(255, 215, 0, 0.5)); 
+}
+.btn-big-outline:hover {
+    background: var(--accent, #ffd700);
+    color: #1a1a1a;
+    box-shadow: 0 0 20px var(--shadow-accent, rgba(255, 215, 0, 0.9));
+}
+
+/* ============================================
+    PÁGINA ESPECÍFICA: CONTACTO
+============================================ */
+
+/* ESTILOS BASE DEL PRELOADER (Cubre toda la pantalla) */
+#preloader {
+    width: 100%;
+    height: 100vh;
+    background: var(--bg); /* O el color de fondo de tu elección */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 99999; /* Asegura que esté por encima de todo */
+    opacity: 1;
+    /* La transición suaviza el efecto de desaparición */
+    transition: opacity 0.8s ease, visibility 0s 0.8s;
+}
+
+/* ESTILO DE OCULTAMIENTO (Activado por JavaScript) */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Crucial para poder hacer clic en el contenido de abajo */
+}
+
+/* 1. ESTRUCTURA BASE Y HERO */
+.contacto-hero {
+    /* Mantiene el fondo oscuro y la estructura full-screen */
+    padding: 120px 0 80px 0; 
+    background-color: var(--bg, #0a0a0a); 
+    color: var(--white);
+    min-height: 100vh;
+    position: relative; /* CRÍTICO: Debe ser relative para que ::before funcione */
+    z-index: 1;
+    text-align: center;
+}
+
+/* 🚀 NUEVO: PSEUDO-ELEMENTO PARA EL LOGO DE FONDO */
+.contacto-hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
+    width: 100%; 
+    height: 100%; 
+
+    /* Configuración del Logo */
+    background-image: url('img/logo.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 550px; 
+    
+    /* Efectos de Inversión y Transparencia */
+    opacity: 0.12; 
+    filter: drop-shadow(0 0 8px var(--shadow-accent)); 
+    
+    z-index: -1; /* Lo manda detrás del contenido */
+    pointer-events: none;
+}
+
+.contacto-hero .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* TÍTULOS */
+.contacto-hero .page-title {
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--accent, #f4df5a);
+    text-shadow: 0 0 12px var(--shadow-accent, rgba(244, 223, 90, 0.7)); 
+    margin-bottom: 10px;
+}
+.contacto-hero .subtitle {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Enlace Volver */
+.back-link {
+    display: inline-block;
+    color: #b0b0b0;
+    text-decoration: none;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+.back-link:hover {
+    color: var(--accent, #f4df5a);
+}
+
+
+/* 2. GRID PRINCIPAL (FORMULARIO Y CONTACTO RÁPIDO) */
+.contacto-grid {
+    display: grid;
+    /* Dos columnas, 60% para el formulario, 40% para la información */
+    grid-template-columns: 3fr 2fr; 
+    gap: 40px;
+    text-align: left; /* Alineamos el texto dentro de las columnas */
+}
+
+/* Contenedor de Formularios (Estilo Glass) */
+.contacto-form-container {
+    background: var(--glass, rgba(15, 15, 15, 0.8)); 
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.contacto-form-container h2, 
+.contacto-info-container h2 {
+    font-size: 28px;
+    color: var(--white);
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--accent, #f4df5a);
+    padding-bottom: 10px;
+}
+
+
+/* 3. ESTILOS DE FORMULARIO */
+.form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: var(--white);
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent, #f4df5a);
+    outline: none;
+    box-shadow: 0 0 8px var(--shadow-accent, rgba(244, 223, 90, 0.5));
+}
+
+.contact-form select {
+    /* Ajuste para mantener la altura del select */
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f4df5a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 18px;
+}
+.contact-form option {
+    background-color: #1a1a1a;
+    color: var(--white);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* 4. BOTÓN DE ENVÍO (Estilo Neón) */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent, #f4df5a);
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--shadow-accent, rgba(244, 223, 90, 0.6));
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #fff; /* Pequeño cambio de color al blanco para efecto hover */
+    box-shadow: 0 0 20px var(--shadow-accent, rgba(244, 223, 90, 1));
+    transform: translateY(-2px);
+}
+
+
+/* 5. VÍAS DE CONTACTO RÁPIDO */
+.contacto-info-container {
+    padding-top: 40px;
+}
+.info-intro {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-list li {
+    margin-bottom: 20px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-link i {
+    font-size: 24px;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+/* Estilos específicos por tipo de contacto */
+.contact-link.whatsapp i {
+    color: #25d366; /* Verde WSP */
+    text-shadow: 0 0 10px rgba(37, 211, 102, 0.8);
+}
+.contact-link.email i {
+    color: var(--accent, #f4df5a); 
+    text-shadow: 0 0 10px var(--shadow-accent);
+}
+.contact-link.social i {
+    color: #c13584; /* Tono de Instagram */
+    text-shadow: 0 0 10px rgba(193, 53, 132, 0.8);
+}
+
+.contact-link:hover {
+    transform: translateX(5px);
+    background-color: #252525;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.contact-link .details {
+    display: flex;
+    flex-direction: column;
+}
+.contact-link strong {
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+}
+.contact-link span {
+    color: #b0b0b0;
+    font-size: 14px;
+}
+
+/* Información Adicional (Horarios, etc.) */
+.contact-additional-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 30px;
+    color: #ccc;
+}
+.contact-additional-info h3 {
+    font-size: 20px;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+.contact-additional-info strong {
+    color: var(--white);
+}
+.contact-additional-info .note {
+    font-size: 14px;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+
+/* 6. MEDIA QUERIES (RESPONSIVE) */
+@media (max-width: 900px) {
+    .contacto-grid {
+        /* Pasa a una sola columna en móviles/tablets */
+        grid-template-columns: 1fr; 
+        gap: 50px;
+    }
+    .contacto-info-container {
+        padding-top: 0;
+    }
+    .contacto-form-container h2, 
+    .contacto-info-container h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .contacto-hero .page-title {
+        font-size: 40px;
+    }
+    .contacto-hero .subtitle {
+        font-size: 16px;
+    }
+    .contacto-form-container {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+  FOOTER (PIE DE PÁGINA)
+============================================ */
+.footer {
+    background: #0d0d0d; /* Fondo muy oscuro */
+    color: #ccc;
+    padding-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1fr; 
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+
+.footer-branding .brand-title {
+    /* Reutilizamos el estilo del título de la marca del header */
+    font-size: 28px; 
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-slogan {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* Redes Sociales en el Footer */
+.footer-socials {
+    /* Reutilizamos la clase .social-links */
+    gap: 15px;
+}
+
+/* Título de las columnas (Navegación Rápida, Servicios, Contacto) */
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    width: fit-content;
+    padding-bottom: 5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    background: #000;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive del Footer */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+
+@media (max-width: 550px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* 1 columna en móvil */
+        text-align: center;
+    }
+    .footer-col h4 {
+        margin: 25px auto 15px auto;
+        border-bottom: none; /* Quitamos el subrayado en móvil */
+    }
+    .footer-branding {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+
+/* =====================================================
+   SECCIONES DE PÁGINA PRINCIPAL (deportes y servicios)
+====================================================== */
+
+/* 1. Estilo Básico de Pantalla Completa (Full-Screen) */
+.section-full-screen {
+    /* Ocupa el 100% del alto y ancho de la ventana */
+    min-height: 100vh;
+    width: 100vw; 
+    
+    /* Usamos Grid para un centrado aún más simple y robusto en la pantalla */
+    display: grid;
+    place-items: center; /* Centra el contenido (sports-content/services-content) */
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* 2. Marca de Agua del Logo (ajustada para el efecto neón) */
+/* Usamos ::before para crear el logo gigante de fondo */
+.section-full-screen::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Configuración del Logo de Fondo (Deporte Analizado) */
+    background-image: url('img/logo.png'); /* Asegúrate de que esta ruta sea correcta */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 50vw; /* Más grande para llenar más */
+    height: 50vh; /* Más grande para llenar más */
+    opacity: 0.10; /* Aún más sutil */
+    z-index: 5;
+    pointer-events: none; 
+}
+
+/* Contenido (Asegura que el contenido quede por encima y centrado) */
+.sports-content,
+.services-content {
+    position: relative;
+    z-index: 10; 
+    padding: 0px 10px; /* Aumento del padding superior/inferior para respirar */
+    width: 100%; /* Ocupa más ancho */
+    max-width: 2000px; /* Limita el ancho máximo del contenedor */
+}
+
+/* Títulos más grandes */
+.section-title {
+    font-size: 3.5rem; /* Aumenta el tamaño de la fuente */
+    margin-bottom: 0.5rem;
+}
+.section-subtitle {
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
+    margin-bottom: 40px;
+    color: var(--color-text-faint); /* Color sutil */
+}
+
+.grid-deportes-resumen {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px;
+    /* 🚀 AUMENTAMOS EL ANCHO MÁXIMO (Si lo tenías más pequeño que 1400px) */
+    max-width: 1600px; /* Asegura un amplio espacio horizontal para 4 tarjetas grandes */
+    margin: 40px auto 50px auto; 
+}
+
+.servicio-resumen-card {
+    padding: 40px; /* Más padding interno */
+    min-height: 220px; /* Altura mínima aumentada */
+}
+.servicio-resumen-card span {
+    font-size: 3.5rem; /* Icono mucho más grande */
+}
+.servicio-resumen-card h3 {
+    font-size: 1.6rem;
+}
+.servicio-resumen-card p {
+    font-size: 1rem;
+}
+
+.grid-deportes-resumen {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px; 
+    
+    /* Mantenemos este valor alto para que quepan 4 */
+    max-width: 1600px; 
+    margin: 40px auto 50px auto; 
+}
+
+.deporte-resumen-card {
+    /* Mantenemos el tamaño horizontal (280px) */
+    flex: 0 0 280px; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    
+    background: var(--glass);
+    
+    /* 🚀 CAMBIO 1: MUCHO MÁS PADDING VERTICAL */
+    padding: 60px 30px; /* Aumentado de 40px a 60px en vertical */
+    
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* 🚀 CAMBIO 2: ALTURA MÍNIMA AÚN MAYOR */
+    min-height: 350px; /* Aumentado de 300px a 350px */
+    position: relative; 
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+
+.deporte-resumen-card img {
+    /* Imagen grande (130px) se mantiene */
+    width: 130px; 
+    height: 130px; 
+    /* 🚀 CAMBIO 3: Más margen para separar la imagen del título */
+    margin-bottom: 30px; /* Subido de 20px a 30px */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+/* 4. Título en Blanco para mejor contraste */
+.title {
+    color: var(--color-yellow); /* O el color que uses para textos claros */
+}
+
+/* Efectos al pasar el mouse (Neón y Levantamiento) */
+.deporte-resumen-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--shadow-accent);
+    border-color: var(--accent);
+}
+
+
+.deporte-resumen-card h3 {
+    /* Título grande (24px) se mantiene */
+    font-size: 24px; 
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--shadow-accent);
+}
+
+/* --- SERVICIOS CARDS (ESTILO FINAL UNIFICADO) --- */
+.servicio-resumen-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    
+    /* ESTILO DE TARJETA UNIFICADO (Glass, Borde sutil) */
+    background: var(--glass); 
+    padding: 30px; 
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    
+    /* Borde sutil (el que funciona en tu página específica) */
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+
+    min-height: 200px; /* Estiradas */
+    position: relative; 
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* Efectos al pasar el mouse (Neón y Levantamiento) */
+.servicio-resumen-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--shadow-accent);
+    border-color: var(--accent);
+}
+
+.servicio-resumen-card span { /* Icono Emoji/Servicio */
+    font-size: 3.5rem; 
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.servicio-resumen-card h3 {
+    font-size: 22px; 
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--shadow-accent);
+    margin-bottom: 10px;
+}
+
+.servicio-resumen-card p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* ============================================
+   SECCIÓN TESTIMONIOS (DATA-CARDS)
+============================================ */
+/* AJUSTE PARA CENTRAR LOS TÍTULOS DE TESTIMONIOS */
+/* ============================================
+   SECCIÓN TESTIMONIOS (DATA-CARDS) - CORREGIDO FONDO DE LOGO
+============================================ */
+
+.seccion-testimonios {
+    padding: 10px 40px;
+    background-color: transparent;
+    position: relative; 
+    overflow: hidden; 
+    z-index: 1; 
+    /* 🎨 NUEVO: Centra el texto dentro de la sección */
+    text-align: center; 
+}
+
+/* 💥 MEJORA DE TÍTULO (Color y Glow) 💥 */
+.seccion-testimonios .section-title {
+    font-size: 58px; 
+    font-weight: 900;
+    /* 🟡 NUEVO: Color amarillo solicitado */
+    color: #f4df5a; 
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    /* Mantenemos el efecto de brillo, ajustando el color de acento si lo tienes definido */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px #f4df5a; 
+}
+
+.seccion-testimonios .section-subtitle {
+    font-size: 24px;
+    color: #ccc;
+    margin-bottom: 60px;
+    /* El centrado se hereda de .seccion-testimonios, no necesita un ajuste extra aquí. */
+}
+
+/* Asegura que el contenedor de contenido esté por encima del logo de fondo */
+.seccion-testimonios .contenedor {
+    position: relative;
+    z-index: 2; /* Mayor que el z-index del ::after */
+}
+
+
+
+.grid-testimonios {
+    display: grid;
+    /* 2 columnas en desktop, para que las tarjetas sean grandes */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+}
+
+/* --- ESTILO BASE DE LA DATA-CARD --- */
+/* Asegura que las tarjetas estén por encima de la marca de agua y de la sección */
+.testimonio-card {
+    background: var(--glass); 
+    padding: 35px;
+    border-radius: var(--radius);
+    position: relative; /* Asegura su propio contexto de apilamiento */
+    z-index: 3; /* Mayor que el z-index del contenedor y del fondo */
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Efecto de brillo al pasar el mouse (similar a las cards anteriores) */
+.testimonio-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--shadow-accent);
+}
+
+/* 1. Tono y Texto del Testimonio */
+.testimonio-text {
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    /* Comillas o un ícono que se revele */
+    position: relative; 
+}
+.testimonio-text::before {
+    content: "“";
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    font-size: 4rem;
+    color: rgba(244, 223, 90, 0.2); /* Sutil */
+    line-height: 1;
+    font-family: serif;
+}
+
+
+/* MODIFICACIONES PARA EL AVATAR */
+.testimonio-meta {
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    display: flex; /* Usamos Flexbox para alinear avatar y texto */
+    align-items: center;
+    gap: 15px; /* Espacio entre el avatar y el texto */
+}
+
+.meta-avatar {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; /* Hacerlo circular */
+    object-fit: cover;
+    /* Borde neón sutil para destacarlo */
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 10px var(--shadow-accent);
+}
+
+.meta-details {
+    /* Contenedor del nombre y servicio */
+    line-height: 1.2;
+}
+
+/* Ajustes menores al texto para que funcione con el avatar */
+.meta-service {
+    margin-bottom: 2px; /* Reducimos el margen */
+}
+
+.meta-name {
+    margin: 0; /* Eliminamos cualquier margen que pueda tener h4 */
+}
+
+/* --- TOQUE ASIMÉTRICO (¡PICANTE!) --- */
+
+/* Tarjetas 1 y 4 (Esquinas superiores curvadas para darle un aire futurista) */
+.testimonio-card:nth-child(1),
+.testimonio-card:nth-child(4) {
+    /* Esquina superior izquierda y superior derecha: muy redondeadas */
+    border-top-left-radius: 40px; 
+    border-top-right-radius: 4px;
+}
+
+/* Tarjetas 2 y 3 (Esquinas inferiores curvadas) */
+.testimonio-card:nth-child(2),
+.testimonio-card:nth-child(3) {
+    /* Esquina inferior derecha e inferior izquierda: muy redondeadas */
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 4px;
+}
+
+/* Responsive para que se vea bien en móvil */
+@media (max-width: 900px) {
+    .grid-testimonios {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 30px;
+    }
+    
+    /* Reiniciamos las formas asimétricas en móvil para que no se vean raras */
+    .testimonio-card {
+        border-radius: var(--radius); 
+    }
+}
+
+/* 💥 FONDO DE LOGO TRANSPARENTE (DENTRO DE LA SECCIÓN, DEBAJO DEL CONTENIDO) 💥 */
+.seccion-testimonios::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('img/logo.png'); /* ⬅️ RUTA DE TU LOGO */
+    background-repeat: no-repeat; /* Asegura que no se repita */
+    
+    /* 💥 MODIFICACIONES PARA CENTRADO Y TAMAÑO 💥 */
+    background-position: center center; /* Centrado horizontal y vertical */
+    background-size: 550px; /* Tamaño más chico (ajusta el valor si es necesario) */
+    
+    opacity: 0.10; 
+
+    /* 💥 CLAVE: Z-INDEX NEGATIVO para que quede detrás del contenido */
+    z-index: -1; 
+}
+
+
+
+
+/* ============================================
+    SEPARADOR DE SECCIONES (LÍNEA DE ACENTO)
+============================================ */
+.section-separator {
+    /* Reiniciamos estilos base del HR */
+    border: none;
+    height: 5px; /* 🚀 Definimos el grosor de la línea */
+    width: 80%; /* 🚀 Ocupará el 80% del ancho (puedes ajustarlo a 100% si lo prefieres) */
+    margin: 50px auto; /* Espacio vertical de 50px arriba y abajo, centrado horizontalmente */
+    
+    /* Aplicamos el color de acento y el brillo neón */
+    background-color: var(--accent); /* Usamos tu variable de color amarillo */
+    box-shadow: 0 0 10px var(--shadow-accent), /* Sombra neón principal */
+                0 0 20px var(--shadow-accent); /* Sombra más difusa */
+    
+    border-radius: 2px; /* Esquinas ligeramente redondeadas */
+}
+
+
+
+/* ============================================
+    PÁGINA CARRITO DE COMPRAS
+============================================ */
+
+.cart-page-content {
+    padding: 120px 0 80px 0;
+    background-color: var(--bg, #0a0a0a); 
+    color: var(--white);
+    text-align: center;
+}
+
+.cart-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que el resumen baje en móvil */
+    gap: 40px;
+}
+
+/* ----------------- A. TABLA DE PRODUCTOS ----------------- */
+.cart-items-table {
+    flex: 3 1 600px; /* Ocupa la mayor parte del espacio */
+    background: var(--glass, rgba(15, 15, 15, 0.8)); 
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cart-items-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.cart-items-table th {
+    padding: 15px 0;
+    border-bottom: 2px solid var(--accent); /* Línea amarilla separadora */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--accent);
+}
+
+.cart-items-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    vertical-align: middle;
+}
+
+.item-name-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Estilo para el input de cantidad */
+.quantity-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff5555; /* Color de peligro para eliminar */
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.remove-btn:hover {
+    color: #ff0000;
+}
+
+/* ----------------- B. RESUMEN DEL TOTAL ----------------- */
+.cart-summary {
+    flex: 1 1 350px; /* Ocupa el espacio restante */
+    background: var(--glass, rgba(15, 15, 15, 0.8)); 
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+}
+
+.cart-summary h2 {
+    font-size: 24px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.total-line {
+    font-size: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-checkout {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background: var(--accent);
+    color: var(--bg); /* Texto oscuro sobre amarillo */
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-checkout:hover {
+    background: #fff; /* Más claro al pasar el mouse */
+}
+
+.btn-continue {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Responsive básico para la tabla */
+@media (max-width: 900px) {
+    /* La tabla y el resumen se apilan */
+    .cart-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    
+    /* En móvil, la tabla se puede simplificar o permitir scroll horizontal */
+    .cart-items-table {
+        overflow-x: auto;
+    }
+    .cart-items-table table {
+        min-width: 700px; /* Fuerza un ancho mínimo para que se vea bien en móvil */
+    }
+}
+
+
+
+/* ============================================
+    ESTILOS GENERALES DE PÁGINAS DE CURSOS
+============================================ */
+.course-page-content {
+    background-color: var(--bg, #0a0a0a); 
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--accent); /* Color de acento general */
+    text-shadow: 0 0 15px var(--shadow-accent);
+}
+.subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 60px;
+}
+
+/* El estilo de la línea separadora <hr> ya lo tienes en estilo.css */
+
+
+/* ============================================
+    A. SECCIÓN DE PAQUETES (4 CARDS)
+============================================ */
+.packages-section h2, .individual-courses-section h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.package-card {
+    padding: 30px;
+    border-radius: 15px;
+    height: 100%;
+    /* Estilo del card */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px var(--shadow-accent);
+}
+
+.package-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.package-card h3 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.package-details {
+    font-size: 0.95rem;
+    color: #ccc;
+    min-height: 40px;
+}
+
+.package-price {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    margin: 20px 0;
+}
+
+/* Estilo para destacar el mejor paquete */
+.package-card.best-seller {
+    border-color: var(--accent);
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0.5));
+}
+
+
+/* ============================================
+    B. SECCIÓN DE CURSOS INDIVIDUALES
+============================================ */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Columnas responsivas */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.course-card {
+    border-radius: 15px;
+    padding: 0; /* Quitamos padding aquí y lo ponemos en el contenido */
+    overflow: hidden;
+    text-align: left;
+    height: 100%;
+    /* Estilo Glass y hover similar a los paquetes */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-img {
+    width: 100%;
+    height: 200px; /* Altura de imagen fija para uniformidad */
+    object-fit: cover;
+}
+
+.course-card h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    padding: 15px 20px 5px 20px;
+}
+
+.course-desc {
+    font-size: 0.9rem;
+    color: #ccc;
+    padding: 0 20px 15px 20px;
+    min-height: 50px; /* Asegura un mínimo de altura de la descripción */
+}
+
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+/* Estilos de Botones */
+.btn-add-cart {
+    padding: 10px 20px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+.btn-add-cart:hover {
+    background: #fff;
+}
+.small-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-yellow {
+    /* ... otros estilos ... */
+    position: relative; /* Necesario para que z-index funcione */
+    z-index: 20; /* Valor alto para que esté por encima de todo */
+}
+
+
+/* =====================================================
+   ESTILOS FINALES Y SIMÉTRICOS PARA INFORMES PREMIUM (inf-*.html)
+====================================================== */
+
+/* CORRECCIÓN 1: Separar el contenido del Header */
+
+.seccion-informes-futbol, 
+.seccion-adr-futbol { /* <--- ¡Añadimos la clase ADR aquí! */
+    padding-top: 100px; /* Le damos 80px de espacio entre el Header y el título principal */
+}
+
+/* Título Principal de la Página (Amarillo Neon Centrado) */
+.page-title-servicio {
+    /* 1) Ajuste de espaciado: Añadimos un margen superior más grande */
+    margin-top: 50px; 
+    padding-top: 0px;
+    
+    color: var(--color-yellow, #ffcc00);
+    text-align: center; 
+    /* Efecto Neon más pronunciado */
+    text-shadow: 0 0 7px rgba(255, 204, 0, 0.8), 0 0 10px rgba(255, 204, 0, 0.3); 
+    padding-bottom: 10px;
+    margin-bottom: 0; /* Usaremos el margin-top del contenedor para separación inferior */
+}
+
+/* Subtítulo */
+.subtitle-servicio {
+    text-align: center;
+    padding-bottom: 40px; /* Más espacio debajo del subtítulo */
+    margin: 0 auto;
+    max-width: 800px; /* Limita el ancho del subtítulo para que esté más centrado */
+}
+
+
+
+/* 1. Contenedor Grid/Flex */
+.grid-opciones-informes-2col {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    gap: 40px; 
+    /* 1) Ajuste de espaciado: Centrar las cards verticalmente, separándolas del header/subtítulo */
+    margin: 30px auto 80px auto; 
+    padding: 0 20px; 
+    /* 2) Hacer las cards más grandes */
+    max-width: 1400px; 
+}
+
+/* 2. Estilo Base de las Tarjetas (SIMÉTRICAS) */
+.opcion-card {
+    /* 2) Hacer las cards más grandes */
+    flex: 1 1 500px; /* Aumentamos la base flexible */
+    max-width: 600px; 
+    
+    padding: 50px 40px; /* Más padding interno para darle aire */
+    border-radius: 12px;
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    color: #e0e0e0; 
+    border: 1px solid #333; 
+}
+
+/* Título de la tarjeta (Amarillo) */
+.opcion-card h2.opcion-title {
+    color: var(--color-yellow, #f4df5a); 
+    /* Mejoramos la fuente del título */
+    font-size: 1.8rem; 
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los iconos (medallas) */
+.icon-card {
+    /* 4) Medallas más grandes */
+    font-size: 4.5rem; 
+    display: block;
+    margin-bottom: 15px;
+}
+/* Color del Icono de Plata si el emoji no es visible */
+.icon-card.icon-plata {
+    color: silver;
+}
+/* Aseguramos el color Oro para el premium, aunque el emoji ya lo tiene */
+.icon-card.icon-oro {
+    color: gold; 
+}
+
+
+/* 3. Tarjeta Premium (SOLO borde de color diferente) */
+.opcion-card.destacado {
+    background-color: #1a1a1a; 
+    border: 4px solid var(--color-yellow, #ffcc00); 
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.3); 
+}
+
+/* 5) Estilo del "Incluye" y la lista de puntos */
+
+/* Espacio antes de la lista (para imagen/separación) */
+.opcion-card h3.opcion-subtitle {
+    /* 3) Espacio antes de "Incluye" para una imagen */
+    margin-top: 40px; 
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--color-yellow, #f4df5a);
+}
+
+/* 4) Alineación del texto de la lista a la izquierda */
+.opcion-features {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* <-- Importante: Alineación a la izquierda */
+    margin: 20px 0 30px; 
+}
+
+.opcion-features li {
+    padding: 10px 0;
+    font-size: 1.0rem;
+    border-bottom: 1px dashed #333;
+}
+
+/* El botón debe ir siempre abajo, alineado al final */
+.opcion-card .btn-yellow {
+    margin-top: auto; 
+}
+
+/* --- Responsive (Móviles) --- */
+@media (max-width: 850px) {
+    .grid-opciones-informes-2col {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .opcion-card {
+        width: 100%;
+        max-width: 450px; 
+        padding: 40px 30px;
+    }
+}
+
+/* ESTILOS PARA IMAGEN DENTRO DE LAS CARDS */
+
+.opcion-img-wrapper {
+    text-align: center; /* Centra la imagen en el espacio */
+    margin: 30px 0 30px; /* Margen arriba y abajo de la imagen */
+}
+
+.opcion-image {
+    width: 100%; 
+    max-width: 250px; /* La imagen no será más grande de 150px */
+    height: auto;
+    border-radius: 8px; 
+}
+
+/* ============================================
+   BOTÓN GLOBAL "VOLVER" (Flecha Fija)
+============================================ */
+
+#back-button {
+    position: fixed; 
+    top: 85px; /* <--- VALOR AJUSTADO (Bajo del Header) */
+    left: 20px;
+    
+    /* Diseño del botón */
+    background: rgba(15, 15, 15, 0.9); /* Fondo oscuro semitransparente */
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    text-decoration: none;
+    
+    /* Aseguramos que esté por encima de casi todo */
+    z-index: 9999; 
+    
+    /* Borde y Sombra Neón Amarilla */
+    border: 2px solid var(--color-yellow, #ffcc00);
+    box-shadow: 0 0 15px var(--shadow-accent);
+    
+    transition: all 0.3s ease;
+}
+
+/* Estilo del ícono (la flecha) */
+#back-button .icon-arrow {
+    font-size: 1.5rem;
+    line-height: 1; /* Asegura que el ícono esté centrado */
+}
+
+/* Efecto Hover (al pasar el mouse) */
+#back-button:hover {
+    transform: scale(1.05); /* Ligeramente más grande */
+    background: rgba(30, 30, 30, 0.95);
+    cursor: pointer;
+}
+
+/* Opcional: Ocultarlo en pantallas muy pequeñas si molesta */
+@media (max-width: 500px) {
+    #back-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 12px;
+    }
+    #back-button .icon-arrow {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+/* ===================================================
+   ESTILOS GENERALES DEL CARRITO DE COMPRAS
+   =================================================== */
+
+/* Estilos para el contenedor en páginas de productos (sidebar) */
+#carrito-contenedor {
+    border: 1px solid var(--color-primario, #4a4a4a); /* Usar tu color primario */
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #fff;
+    border-radius: 8px; 
+}
+
+/* Título principal del carrito */
+#carrito-contenedor h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--color-acento, #ffd700); /* Color de acento para destacar */
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* ===================================================
+   ESTILOS DE LA LISTA DE ÍTEMS (#lista-items-carrito)
+   =================================================== */
+
+#lista-items-carrito {
+    list-style: none; 
+    padding: 0;
+    margin-bottom: 30px;
+    border-top: 2px solid var(--color-primario, #4a4a4a); 
+}
+
+/* Estilo para cada ítem (producto/servicio) en la lista */
+.item-en-carrito {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #333; /* Separador */
+}
+
+/* Contenedor de la información del producto (nombre y cantidad) */
+.item-info {
+    flex-grow: 1; 
+    padding-right: 10px;
+}
+
+/* Nombre del producto/servicio */
+.item-nombre {
+    font-weight: 700; 
+    color: #fff; /* Blanco */
+    display: block;
+}
+
+/* Cantidad y precio unitario */
+.item-cantidad-precio {
+    font-size: 0.9em;
+    color: #aaa;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Contenedor de subtotal y botón de eliminar */
+.item-acciones {
+    display: flex;
+    align-items: center;
+    min-width: 120px; 
+    justify-content: flex-end; 
+}
+
+/* Subtotal (Precio final de ese ítem) */
+.item-subtotal {
+    font-weight: 700;
+    color: var(--color-acento, #ffd700); /* Color de acento */
+    margin-right: 20px; 
+}
+
+/* Botón de Eliminar (la 'X') */
+.btn-eliminar-item {
+    background: #2a2a2a;
+    border: 1px solid #4a4a4a;
+    border-radius: 5px;
+    color: #ff5555; 
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 8px;
+    transition: all 0.2s;
+}
+
+.btn-eliminar-item:hover {
+    background-color: #ff5555; 
+    color: white;
+    border-color: #ff5555;
+}
+
+/* ===================================================
+   ESTILOS DEL RESUMEN Y BOTONES
+   =================================================== */
+
+/* Líneas de resumen (Subtotal, Envío, Total) */
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+/* Total a Pagar */
+.total-line {
+    border-top: 2px solid var(--color-acento, #ffd700);
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Estilo para el ID del Total a Pagar */
+#carrito-total {
+    font-weight: bold;
+    color: var(--color-acento, #00ff99); 
+}
+
+/* Botón de Finalizar Compra */
+#btn-finalizar-compra {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: var(--color-acento, #ffd700); 
+    color: #1a1a1a; /* Texto oscuro en fondo claro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#btn-finalizar-compra:hover {
+    background-color: #ffcc00; /* Un tono un poco más oscuro */
+    transform: translateY(-1px);
+}
+
+/* ===================================================
+   ESTILOS DEL CONTADOR DE HEADER (BURBUJA)
+   =================================================== */
+
+#carrito-contador {
+    position: absolute; 
+    top: 5px;          
+    right: 5px;        
+    background-color: #383838; 
+    color: #ffd700; /* Amarillo vibrante */
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%; 
+    padding: 2px 5px;
+    line-height: 1;
+    min-width: 15px; 
+    text-align: center;
+    transition: all 0.2s ease-in-out; 
+    z-index: 100; /* Asegura que esté por encima de otros elementos */
+}
+
+.contador-vacio {
+    opacity: 0; 
+    transform: scale(0); 
+    pointer-events: none; 
+}
+
+/* ===================================================
+   ESTILOS DE OPCIONES DE PAGO CON LOGOS
+   =================================================== */
+
+.payment-options {
+    display: flex;
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 10px; /* Espacio entre botones */
+    margin-top: 15px;
+}
+
+.payment-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.payment-btn img {
+    height: 20px; /* Tamaño del logo */
+    width: auto;
+    margin-right: 10px;
+}
+
+.payment-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores Específicos de las Pasarelas */
+
+.mp-btn {
+    background-color: #009ee3; /* Azul de Mercado Pago */
+    color: white;
+}
+
+.dni-btn {
+    background-color: #2e6097; /* Azul de Cuenta DNI */
+    color: white;
+}
+
+.paypal-btn {
+    background-color: #ffc439; /* Amarillo de PayPal */
+    color: #1a1a1a; /* Texto oscuro */
+}

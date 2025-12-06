@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Deporte Analizado</title>
+
+  
+</head>
+
+
+
+<body>
+
+<!-- =====================================================
+     PORTADA FULLSCREEN (INTRO)
+====================================================== -->
+<section class="intro-hero" id="top">
+  <img src="img/logo.png" alt="Deporte Analizado" class="intro-logo">
+
+  <a href="#home" class="scroll-down">
+    
+  </a>
+</section>
+
+<!-- =====================================================
+HEADER
+====================================================== -->
+
+
+<header class="header">
+    
+    <div class="header-left social-links">
+        <a href="https://www.instagram.com/deporteanalizado" target="_blank" aria-label="Instagram" title="Síguenos en Instagram">
+            <img src="img/ig.svg" class="social-icon-img" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@deporteanalizado" target="_blank" aria-label="TikTok" title="Mira nuestros videos en TikTok">
+            <img src="img/tt.png" class="social-icon-img" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com/@DeporteAnalizado" target="_blank" aria-label="YouTube" title="Suscríbete a nuestro canal de YouTube">
+            <img src="img/yt.png" class="social-icon-img" alt="YouTube">
+        </a>
+        <a href="https://www.twitch.tv/futbolanalizado" target="_blank" aria-label="Twitch" title="Síguenos en Twitch">
+            <img src="img/tw.png" class="social-icon-img" alt="Twitch">
+        </a>
+    </div>
+
+
+    <div class="header-center">
+        <span class="brand-title">DEPORTE ANALIZADO</span>
+    </div>
+
+    <nav class="header-right">
+        <ul class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="deportes.html">Deportes</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
+                <span id="carrito-contador" class="contador-vacio">0</span>
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- =====================================================
+PRESENTACION
+====================================================== -->
+
+<main>
+a
+a
+a
+a
+<main>
+
+<main>
+        <!-- ============================================= -->
+        <!-- SECCIÓN 1: TÍTULO y CARDS (Pantalla completa con fondo) -->
+        <!-- ============================================= -->
+        <section class="presentacion reveal" id="home">
+            <div class="presentacion-container">
+
+                <!-- 1. TÍTULO Y SUBTÍTULO -->
+                <div class="header-content">
+                    <h1 class="presentacion-title">
+                        LLEVAMOS EL DEPORTE<br>
+                        <span>AL MÁS ALTO NIVEL</span>
+                    </h1>
+                    <p class="presentacion-sub">
+                    Cursos / Capacitaciones · Análisis del Rendimiento · Informes Premium (Videos Personalizados)  
+                    </p>
+                           
+                    <!-- 2. LAS 3 CARDS (Horizontales en escritorio, apiladas en móvil) -->
+                <div class="presentacion-cards">
+                    <div class="p-card">
+                        <img src="img/stat1.jpg" onerror="this.src='https://placehold.co/200x220/333333/FFFFFF?text=STAT1'" class="p-icon" alt="Gráfico de rendimiento">
+                        <h3>+30</h3>
+                        <p>Análisis del rendimiento realizados</p>
+                    </div>
+                    <div class="p-card">
+                        <img src="img/stat2.png" onerror="this.src='https://placehold.co/200x220/333333/FFFFFF?text=STAT2'" class="p-icon" alt="Certificado de cursos">
+                        <h3>+10</h3>
+                        <p>Cursos profesionales</p>
+                    </div>
+                    <div class="p-card">
+                        <img src="img/stat3.jpg" onerror="this.src='https://placehold.co/200x220/333333/FFFFFF?text=STAT3'" class="p-icon" alt="Deportes cubiertos">
+                        <h3>4</h3>
+                        <p>Deportes diferentes</p>
+                    </div>
+                
+        </section>
+
+        </section> <hr class="section-separator"> 
+
+<section class="seccion-secc2-resumen"> </section>
+
+        <!-- ============================================= -->
+        <!-- SECCIÓN 2: IMAGEN, TEXTOS y BOTONES (Pantalla completa con fondo) -->
+        <!-- ============================================= -->
+        <section class="presentacion-seccion-dos reveal">
+             <div class="presentacion-right-content">
+                
+                <!-- 1. TÍTULO Y SUBTÍTULO (Nuevo contenido) -->
+                <div class="header-content">
+                    <h1 class="presentacion-title">
+                        <span>Mejorá tu rendimiento</span> con nosotros y da el salto de calidad.<br>
+                    </h1>
+                    <p class="presentacion-sub">
+                        Utilizamos el análisis de video y de datos, con metodologías de trabajo avanzadas y personalizadas.
+                    </p>
+                </div>
+                
+                <!-- 3. IMAGEN -->
+                <img src="img/analisis-pro.jpg" onerror="this.src='https://placehold.co/650x450/111111/FFFFFF?text=ANALISIS+PRO'" alt="Análisis deportivo" class="presentacion-img">
+                
+                <!-- 4. TEXTOS (Lista de conceptos) -->
+               <div class="presentacion-extra">
+    <ul class="presentacion-list">
+        <li>Conceptos tácticos</li><li>Conceptos técnicos</li><li>Métricas avanzadas</li> <li>Análisis con dibujos</li>
+    </ul>
+</div>
+               
+    </main>
+
+    <script>
+        // Script de ejemplo para la animación 'reveal' (se mantiene)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Llamar a reveal al cargar la página para que la primera sección se muestre
+        reveal();
+    </script>
+</body>
+</html>
+
+<!-- =====================================================
+deportes
+====================================================== -->
+
+    </div> </section>
+</section> <hr class="section-separator"> 
+
+<section class="seccion-deportes-resumen"> </section>
+
+    <section class="section-full-screen section-sports" id="deportes">
+    <div class="contenedor sports-content"> 
+        <h2 class="section-title title-white">DEPORTES</h2>
+        <p class="section-subtitle">Explora las principales áreas en las que te ayudamos a mejorar.</p>
+        <div class="grid-deportes-resumen">
+            
+            <a href="futbol.html" class="deporte-resumen-card">
+                <img src="img/f.png" alt="Fútbol">
+                <h3>Fútbol</h3>
+            </a>
+
+            <a href="rugby.html" class="deporte-resumen-card">
+                <img src="img/r.png" alt="Rugby">
+                <h3>Rugby</h3>
+            </a>
+
+            <a href="hockey.html" class="deporte-resumen-card">
+                <img src="img/h.png" alt="Hockey">
+                <h3>Hockey</h3>
+            </a>
+
+            <a href="tenis.html" class="deporte-resumen-card">
+                <img src="img/t.png" alt="Tenis">
+                <h3>Tenis</h3>
+            </a>
+            
+        </div>
+
+        <div class="center-cta">
+            <a href="deportes.html" class="btn-big-yellow">Ver el detalle de todas las disciplinas</a>
+        </div>
+    </div>
+</section>
+
+</section> <hr class="section-separator"> 
+
+<section class="seccion-servicios-resumen"> </section>
+
+<!-- =====================================================
+servicios
+====================================================== -->
+
+<section class="section-full-screen section-services" id="servicios">
+    <div class="contenedor services-content">
+        <h2 class="section-title title-white">NUESTROS SERVICIOS</h2>
+        <p class="section-subtitle">Toda la potencia del análisis aplicada al deporte, sin importar tu nivel.</p>
+
+        <div class="grid-servicios-resumen">
+            
+            <a href="servicios.html#cursos" class="servicio-resumen-card">
+    <img src="img/CURSOS.jpg" alt="Icono Cursos y Capacitación" class="servicio-icon">
+    <h3>Cursos</h3>
+    <p>Capacítate en el manejo de herramientas de video y data análisis.</p>
+</a>
+
+<a href="servicios.html#analisis" class="servicio-resumen-card">
+    <img src="img/ADR.jpg" alt="Icono Análisis del Rendimiento" class="servicio-icon">
+    <h3>Análisis del Rendimiento</h3>
+    <p>Sistema de mejora del rendimiento del deportista a través de las imágenes y las estadísticas avanzadas.</p>
+</a>
+
+<a href="servicios.html#videos" class="servicio-resumen-card">
+    <img src="img/INF.jpg" alt="Icono Informes Premium" class="servicio-icon">
+    <h3>Informes Premium</h3>
+    <p>Informes Profesionales con información personal, estadísticas, descripción y video.</p>
+</a>
+
+        </div>
+
+        <div class="center-cta">
+            <a href="servicios.html" class="btn-big-outline">Conocer en detalle los servicios</a>
+        </div>
+    </div>
+</section>
+
+</section> <hr class="section-separator"> 
+
+<section class="seccion-testimonios-resumen"> </section>
+
+<!-- =====================================================
+     testimonios
+====================================================== -->
+<section class="seccion-testimonios" id="testimonios">
+    <div class="contenedor scroll-reveal">
+        
+        <h2 class="section-title">TESTIMONIOS</h2>
+        <p class="section-subtitle">Lo que dicen nuestros clientes sobre los servicios recibidos.</p>
+
+        <div class="grid-testimonios">
+            
+            <div class="testimonio-card card-cursos">
+                <p class="testimonio-text">"La formación es muy completa. Aprendí a utilizar herramientas de video y a aplicar la data de manera práctica en el día a día. ¡Un salto de calidad profesional!"</p>
+                <div class="testimonio-meta">
+<img src="img/alumno.jpg" alt="Foto de Alumno." class="meta-avatar">
+<div class="meta-details"></div>
+                    <h4 class="meta-name">— Alumno. (Analista Deportivo)</h4>
+                </div>
+            </div>
+
+            <div class="testimonio-card card-analisis">
+                <p class="testimonio-text">"Los reportes de rendimiento fueron ultra detallados
+                     y nos permitieron corregir errores tácticos que no veíamos. 
+                     Datos que impactan directamente en el resultado."</p>
+                <div class="testimonio-meta">
+<img src="img/nb.png" alt="Foto de NB." class="meta-avatar">
+<div class="meta-details"></div>
+                    <h4 class="meta-name">— Nehuen Benedetti (Jugador de Fútbol Profesional)</h4>
+                </div>
+            </div>
+
+
+            <div class="testimonio-card card-videos">
+                <p class="testimonio-text">"El video de highlights y errores específicos es la mejor 
+                    herramienta para el jugador. Es un material conciso y visualmente potente. 
+                    ¡Muy recomendable!"</p>
+                <div class="testimonio-meta">
+<img src="img/eo.jpg" alt="Foto de eo." class="meta-avatar">
+<div class="meta-details"></div>
+                    <h4 class="meta-name">— Ezequiel Orbe (Jugador de Fútbol Profesional)</h4>
+                </div>
+            </div>
+
+            <div class="testimonio-card card-videos">
+                <p class="testimonio-text">"La verdad es que el Informe Premium que me
+                    brindaron logró captar a los clubes con mayor interes. Es un servicio
+                    de calidad con entrega en tiempo breve"</p>
+                <div class="testimonio-meta">
+<img src="img/ed.jpg" alt="Foto de ed." class="meta-avatar">
+<div class="meta-details"></div>
+                    <h4 class="meta-name">— Emanuel Dall Aglio (Jugador de Fútbol Profesional)</h4>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+    <div class="contenedor footer-grid">
+
+        <div class="footer-col footer-branding">
+            <span class="brand-title">DEPORTE ANALIZADO</span>
+            <p class="footer-slogan">Llevamos el deporte al más alto nivel.</p>
+            </div> 
+
+        <div class="footer-col">
+            <h4>Navegación Rápida</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="deportes.html">Deportes</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Servicios de Fútbol</h4>
+            <ul class="footer-links">
+                <li><a href="cursos-futbol.html">Cursos y Formación</a></li>
+                <li><a href="adr-futbol.html">Analisis de rendimiento</a></li>
+                <li><a href="inf-futbol.html">Videos Personalizados</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contáctanos</h4>
+            <ul class="footer-links">
+                <li>Email: danalizado@gmail.com</a></li>
+                <li>WhatsApp: <a href="https://wa.me/+5492215443394" target="_blank">+54 9 221 544-3394</a></li>
+                <li class="footer-address">
+                    <p>Ubicación: Buenos Aires, Argentina.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-links footer-socials"> <li><a href="https://www.instagram.com/deporteanalizado">Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@deporteanalizado">TikTok</a></li>
+                <li><a href="https://www.youtube.com/@DeporteAnalizado">YouTube</a></li>
+                <li><a href="https://www.twitch.tv/futbolanalizado">Twitch</a></li>
+            </ul>
+        </div>
+    </div> <div class="footer-bottom">
+        <div class="contenedor">
+            <p>&copy; 2025 DEPORTE ANALIZADO. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+        
+// 1. CONTROL DE PORTADA (INTRO) Y SCROLL
+window.addEventListener("load", () => {
+    const intro = document.querySelector('.intro-hero');
+    const home = document.querySelector('#home');
+    
+    // El intro desaparece después de 3 segundos
+    setTimeout(() => {
+        intro.style.opacity = "0";
+        
+        // Esperar a que la transición termine y luego ocultarlo completamente
+        setTimeout(() => {
+            intro.style.visibility = "hidden";
+            intro.style.display = "none";
+            
+            if (home) {
+                home.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 900); // 0.9 segundos, ajustado al CSS
+    }, 3000); // 3 segundos de duración de la portada
+});
+
+
+// 2. SCROLL REVEAL (Efecto de aparición suave)
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    reveals.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+            el.classList.add("visible");
+        } 
+        // No quitamos la clase 'visible' aquí para evitar parpadeos al subir.
+    });
+}
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+
+// 3. FOOTER (Año actual)
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// 4. GESTIÓN DE DROPDOWNS (Si tienes menús desplegables)
+// Nota: Usa el enfoque de mouseenter/mouseleave y la clase 'open' para CSS
+document.querySelectorAll('.dropdown').forEach(drop => {
+    let timeout;
+
+    drop.addEventListener('mouseenter', () => {
+        clearTimeout(timeout);
+        drop.classList.add('open');
+    });
+
+    drop.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+            drop.classList.remove('open');
+        }, 300); 
+    });
+});
+    </script>
+
+ 
+
+</body>
+</html>
