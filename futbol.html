@@ -7,9 +7,7 @@
     <title>Fútbol | Análisis de Rendimiento</title>
 </head>
 <body>
-    <a href="javascript:history.back()" id="back-button" aria-label="Volver a la página anterior">
-    <span class="icon-arrow">⬅️</span>
-</a>
+   
    <section class="intro-hero" id="top">
   <img src="img/F.png" alt="Futbol Analizado" class="intro-logo">
 
@@ -44,16 +42,13 @@ HEADER
         <span class="brand-title">DEPORTE ANALIZADO</span>
     </div>
 
-    <nav class="header-right">
+     <nav class="header-right">
         <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="deportes.html">Deportes</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
-                <span id="carrito-contador" class="contador-vacio">0</span>
-            </a></li>
-        </ul>
+            </ul>
     </nav>
 </header>
 
@@ -211,5 +206,10 @@ HEADER
     });
 </script>
     
+<a href="carrito.html" id="carrito-flotante-btn" aria-label="Carrito de Compras" title="Ver Carrito">
+    🛒
+    <span id="carrito-contador-flotante" class="contador-vacio">0</span>
+</a>
+
 </body>
 </html>

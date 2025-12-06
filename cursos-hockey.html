@@ -8,9 +8,7 @@
 </head>
 <body>
 
-    <a href="javascript:history.back()" id="back-button" aria-label="Volver a la página anterior">
-    <span class="icon-arrow">⬅️</span>
-</a>
+    
 <!-- =====================================================
 HEADER
 ====================================================== -->
@@ -38,16 +36,13 @@ HEADER
         <span class="brand-title">DEPORTE ANALIZADO</span>
     </div>
 
-    <nav class="header-right">
+     <nav class="header-right">
         <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="deportes.html">Deportes</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
-                <span id="carrito-contador" class="contador-vacio">0</span>
-            </a></li>
-        </ul>
+            </ul>
     </nav>
 </header>
 
@@ -58,26 +53,33 @@ HEADER
 
 
         <section class="individual-courses-section">
-            <h2>Cursos Individuales Disponibles</h2>
-            <div class="courses-grid">
+        <h2>Próximamente</h2>
+        <div class="courses-grid">
                 
                 <div class="course-card glass-card">
-                    <img src="img/curso integral.png" alt="Curso 1 Título" class="course-img">
-                    <h3>Video Análisis Integral</h3>
-                    <p class="course-desc">Recorrido por todas las áreas del Video Análisis.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$250.000 (Pesos argentinos) - 200 uSd
+                <img src="img/curso integral.png" alt="Curso 1 Título" class="course-img">
+                <h3>Video Análisis Integral (Hockey)</h3>
+                <p class="course-desc">Recorrido por todas las áreas del Video Análisis.</p>
+                    <span class="course-price">$250.000 (Pesos argentinos) - 200 uSd</span>
+                <div class="course-footer">
 
-                        </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-h-int')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
+                    <a 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-int')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
 
         
         
@@ -145,17 +147,14 @@ HEADER
     </div>
 </footer>
 
-<div id="carrito-contenedor">
-    <h2>🛒 Tu Carrito de Compras</h2>
-    <ul id="lista-items-carrito">
-        </ul>
-    <p>Total: <span id="carrito-total">$0.00</span></p>
-    <button id="btn-finalizar-compra" style="display: none;">
-        Finalizar Compra
-    </button>
-</div>
+
 
 <script src="js/carrito.js"></script>
+
+<a href="carrito.html" id="carrito-flotante-btn" aria-label="Carrito de Compras" title="Ver Carrito">
+    🛒
+    <span id="carrito-contador-flotante" class="contador-vacio">0</span>
+</a>
 
 </body>
 

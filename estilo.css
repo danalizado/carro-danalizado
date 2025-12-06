@@ -1054,6 +1054,8 @@ PAGINA ESPECIFICA DEPORTES
     width: 100%;
     height: 100%;
     z-index: 0;
+    /* 💥 AÑADE ESTO: IGNORAR CLICS 💥 */
+    pointer-events: none;
 }
 
 /* 1. CURSOS Y CAPACITACIONES */
@@ -1101,6 +1103,19 @@ PAGINA ESPECIFICA DEPORTES
 /* ============================================
   ESTILOS DE TEXTO E IMAGENES (Mantenidos)
 ============================================ */
+
+.servicio-detalle-bloque {
+    /* PROPIEDADES CLAVE PARA EL GRID */
+    display: grid !important; /* <--- ¡FUERZA EL GRID! */
+    grid-template-columns: 1.2fr 1fr !important; /* <--- ¡FUERZA LAS DOS COLUMNAS! */
+    gap: 80px;
+    align-items: center;
+
+    /* ... otras propiedades como max-width, margin, padding, background, etc. ... */
+    
+    position: relative; 
+    overflow: hidden; 
+}
 
 /* Alternar el orden de las columnas */
 .servicio-detalle-bloque.reverse-order {
@@ -2548,14 +2563,93 @@ PAGINA ESPECIFICA DEPORTES
     }
     
     /* En móvil, la tabla se puede simplificar o permitir scroll horizontal */
-    .cart-items-table {
-        overflow-x: auto;
+    .cart-items-table th:nth-child(2), /* Oculta la columna de Precio Unitario */
+    .cart-items-table td:nth-child(2) {
+        display: none;
     }
     .cart-items-table table {
         min-width: 700px; /* Fuerza un ancho mínimo para que se vea bien en móvil */
     }
 }
 
+/* ============================================
+  C. CARRITO VACÍO
+============================================ */
+
+/* Estilo para el contenedor cuando la lista de items está vacía */
+.cart-empty-message {
+    padding: 60px 20px;
+    background: var(--glass, rgba(15, 15, 15, 0.8));
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto; /* Centra el mensaje si no hay items */
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.cart-empty-message h2 {
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.cart-empty-message p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* ============================================
+   BOTÓN FLOTANTE DEL CARRITO (AÑADIR ESTO AL CSS)
+============================================ */
+#carrito-flotante-btn {
+    /* 1. CLAVE: Fijar la posición a la ventana del navegador */
+    position: fixed; 
+    
+    /* 2. Ubicarlo en la esquina inferior derecha */
+    bottom: 30px; 
+    right: 30px;
+    
+    /* 3. CLAVE: Prioridad MÁXIMA para aparecer encima de todo (footer, header, etc.) */
+    z-index: 99999; 
+
+    /* Estilos del botón */
+    background-color: var(--accent, #f4df5a); 
+    color: var(--bg); /* Color de texto oscuro */
+    padding: 15px;
+    border-radius: 50%; /* Circular */
+    font-size: 24px;
+    line-height: 1; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s;
+    text-decoration: none;
+    display: flex; /* Asegura que el icono y el contador se organicen bien */
+    align-items: center;
+    justify-content: center;
+}
+
+#carrito-flotante-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo para el contador (el círculo rojo) */
+#carrito-contador-flotante {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 18px;
+    text-align: center;
+    height: 18px; /* Asegura que el círculo sea parejo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* ============================================
@@ -2666,7 +2760,9 @@ PAGINA ESPECIFICA DEPORTES
     border-radius: 15px;
     padding: 0; /* Quitamos padding aquí y lo ponemos en el contenido */
     overflow: hidden;
-    text-align: left;
+    /* PROPIEDADES AÑADIDAS PARA CENTRAR */
+    display: block;        /* Ocupa todo el ancho disponible */
+    text-align: center;    /* Centra el texto dentro del elemento */
     height: 100%;
     /* Estilo Glass y hover similar a los paquetes */
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2698,17 +2794,25 @@ PAGINA ESPECIFICA DEPORTES
 }
 
 .course-footer {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Ya no necesitamos el 'gap' aquí si los botones se reparten el espacio */
 }
 
 .course-price {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: var(--white);
+    color: #fbe65d;
+    /* PROPIEDADES AÑADIDAS PARA CENTRAR */
+    display: block;        /* Ocupa todo el ancho disponible */
+    text-align: center;    /* Centra el texto dentro del elemento */
+     
+    /* Añade un poco de margen para separarlo de la descripción y los botones */
+    margin: 16px 0;
+    
 }
 
 /* Estilos de Botones */
@@ -2727,12 +2831,41 @@ PAGINA ESPECIFICA DEPORTES
 .small-btn {
     padding: 8px 15px;
     font-size: 0.9rem;
+    /* Ajuste para que todos los botones/enlaces tengan el mismo estilo básico */
+    text-align: center;
+    display: inline-block; /* Crucial para que el enlace <a> se comporte como un bloque de botón */
 }
 
-.btn-yellow {
-    /* ... otros estilos ... */
-    position: relative; /* Necesario para que z-index funcione */
-    z-index: 20; /* Valor alto para que esté por encima de todo */
+/* NUEVO ESTILO: Botón de Más Info (Enlace) */
+.btn-info {
+    /* Diseño: Que contraste con el botón Añadir al Carrito (negro con borde) */
+    background: transparent;
+    border: 1px solid #777;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+.btn-info:hover {
+    background: #333;
+    border-color: var(--accent);
+}
+
+/* Estilo para que los dos botones compartan el espacio de manera uniforme */
+.course-footer .small-btn {
+    flex-grow: 1; /* Permite que los botones crezcan y compartan el espacio */
+    min-width: 45%; /* Asegura que ambos tengan un ancho mínimo para verse bien */
+    box-sizing: border-box; /* Incluye el padding y borde dentro del ancho total */
+}
+
+/* NUEVO: Contenedor para el precio fuera del footer */
+.course-price-container {
+    display: block; /* Para que ocupe todo el ancho y se separe de la descripción */
+    text-align: center;
+    font-size: 0.9rem; /* Reducido de 1.5rem a 1.2rem */
+    font-weight: 300;
+    color: var(--white);
+    padding: 0 20px 10px 20px; /* Margen inferior para separarlo de los botones */
 }
 
 
@@ -3171,3 +3304,24 @@ PAGINA ESPECIFICA DEPORTES
     background-color: #ffc439; /* Amarillo de PayPal */
     color: #1a1a1a; /* Texto oscuro */
 }
+
+/* SOLUCIÓN: ASEGURAR QUE LOS BOTONES RECIBAN EL CLIC */
+
+/* 1. Contenedor del Botón: Le damos una posición base y prioridad Z */
+.servicio-btn-wrapper {
+    position: relative; 
+    z-index: 10; 
+}
+
+/* 2. El Botón: Forzamos la interacción y la prioridad Z */
+.btn-yellow {
+    /* CLAVE: Garantiza que el elemento reciba eventos de ratón */
+    pointer-events: auto !important; 
+    
+    /* CLAVE: Lo coloca por encima de la mayoría de los otros elementos */
+    z-index: 100 !important; 
+    
+    /* Para confirmar visualmente que funciona */
+    cursor: pointer !important; 
+}
+

@@ -7,9 +7,7 @@
     <title>Análisis de Rendimiento (ADR) - Rugby</title>
 </head>
 <body>
-<a href="javascript:history.back()" id="back-button" aria-label="Volver a la página anterior">
-    <span class="icon-arrow">⬅️</span>
-</a>
+
     <!-- =====================================================
 HEADER
 ====================================================== -->
@@ -37,16 +35,13 @@ HEADER
         <span class="brand-title">DEPORTE ANALIZADO</span>
     </div>
 
-    <nav class="header-right">
+     <nav class="header-right">
         <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="deportes.html">Deportes</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
-                <span id="carrito-contador" class="contador-vacio">0</span>
-            </a></li>
-        </ul>
+            </ul>
     </nav>
 </header>
     
@@ -56,16 +51,16 @@ HEADER
 
             <div class="servicio-detalle-bloque" id="analisis-individual">
                 <div class="servicio-info-left">
-                    <h2 class="servicio-title">Análisis de Rendimiento Individual</h2>
+                    <h2 class="servicio-title">Análisis de Rendimiento Individual (Rugby)</h2>
                     <p class="servicio-desc">
                         Analizamos tus acciones clave, movimientos sin balón, toma de decisiones y el cumplimiento de roles específicos en el campo. Ideal para jugadores que buscan dar un salto de calidad en su carrera.
                     </p>
                     
                     <h3>¿En qué Consiste?</h3>
                     <ul class="servicio-features">
-                        <li><span class="icon">🔍</span> **Identificación de KPIs:** Definición de métricas de rendimiento específicas para tu posición (ej. pases clave, duelos ganados).</li>
-                        <li><span class="icon">✂️</span> **Clips Personalizados:** Recortes de video detallados con análisis de texto o voz de tus mejores y peores momentos.</li>
-                        <li><span class="icon">📈</span> **Reporte Cuantitativo:** Gráficos de evolución y estadísticas avanzadas tras varios partidos.</li>
+                        <li><span class="icon">🔍</span> Identificación de KPIs: Definición de métricas de rendimiento específicas para tu posición (ej. pases clave, duelos ganados).</li>
+                        <li><span class="icon">✂️</span> Clips Personalizados: Recortes de video detallados con análisis de texto o voz de tus mejores y peores momentos.</li>
+                        <li><span class="icon">📈</span> Reporte Cuantitativo: Gráficos de evolución y estadísticas avanzadas tras varios partidos.</li>
                     </ul>
 
                     <h3>Proceso de Realización</h3>
@@ -83,11 +78,11 @@ HEADER
                     >
                         Añadir al Carrito
                     </button>
-                                    </div>
-                <div class="servicio-imagen-right">
-                    <img src="img/ADR.jpg" alt="Jugador de fútbol analizando sus propias estadísticas" class="servicio-img">
-                </div>
-            </div>
+                   </div>
+ <div class="servicio-imagen-right">
+ <img src="img/ADR.jpg" alt="Jugador de fútbol analizando sus propias estadísticas" class="servicio-img">
+</div>
+ </div>
             
             <hr class="servicio-separator">
 
@@ -96,7 +91,7 @@ HEADER
                     <img src="img/img-adr-colectivo.jpg" alt="Entrenador analizando una pizarra táctica" class="servicio-img">
                 </div>
                 <div class="servicio-info-left">
-                    <h2 class="servicio-title">Análisis de Rendimiento Colectivo</h2>
+                    <h2 class="servicio-title">Análisis de Rendimiento Colectivo (Rugby)</h2>
                     <p class="servicio-desc">
                         Diseñado para cuerpos técnicos. Analizamos patrones tácticos, la estructura del equipo en diferentes fases de juego y la efectividad de las jugadas a balón parado. Ideal para optimizar el rendimiento grupal.
                     </p>
@@ -189,17 +184,14 @@ HEADER
     </div>
 </footer>
 
-<div id="carrito-contenedor">
-    <h2>🛒 Tu Carrito de Compras</h2>
-    <ul id="lista-items-carrito">
-        </ul>
-    <p>Total: <span id="carrito-total">$0.00</span></p>
-    <button id="btn-finalizar-compra" style="display: none;">
-        Finalizar Compra
-    </button>
-</div>
+
 
 <script src="js/carrito.js"></script>
+
+<a href="carrito.html" id="carrito-flotante-btn" aria-label="Carrito de Compras" title="Ver Carrito">
+    🛒
+    <span id="carrito-contador-flotante" class="contador-vacio">0</span>
+</a>
 
     </body>
 </html>

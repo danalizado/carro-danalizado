@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="cursos.css"> 
 </head>
 <body>
-<a href="javascript:history.back()" id="back-button" aria-label="Volver a la página anterior">
-    <span class="icon-arrow">⬅️</span>
-</a>
+
     
 <!-- =====================================================
 HEADER
@@ -38,162 +36,222 @@ HEADER
         <span class="brand-title">DEPORTE ANALIZADO</span>
     </div>
 
-    <nav class="header-right">
+     <nav class="header-right">
         <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="deportes.html">Deportes</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="carrito.html" class="cart-icon" aria-label="Carrito de Compras">🛒
-                <span id="carrito-contador" class="contador-vacio">0</span>
-            </a></li>
-        </ul>
+            </ul>
     </nav>
 </header>
 
 
-    <main class="course-page-content">
+   <main class="course-page-content">
 
-        <h1 class="page-title title-futbol">Cursos de Fútbol</h1>
+    <h1 class="page-title title-futbol">Cursos de Fútbol</h1>
 
-        
-        <section class="individual-courses-section">
-            <h2>Cursos Individuales Disponibles</h2>
-            <div class="courses-grid">
-                
-                <div class="course-card glass-card">
-                    <img src="img/curso integral.png" alt="Curso 1 Título" class="course-img">
-                    <h3>Video Análisis Integral</h3>
-                    <p class="course-desc">Recorrido por todas las áreas del Video Análisis.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$250.000 (Pesos argentinos) - 200 uSd
+    
+    <section class="individual-courses-section">
+        <h2>Cursos Individuales Disponibles</h2>
+        <div class="courses-grid">
+            
+            <div class="course-card glass-card">
+                <img src="img/curso integral.png" alt="Curso 1 Título" class="course-img">
+                <h3>Video Análisis Integral (Fútbol)</h3>
+                <p class="course-desc">Recorrido por todas las áreas del Video Análisis.</p>
+                    <span class="course-price">$250.000 (Pesos argentinos) - 200 uSd</span>
+                <div class="course-footer">
 
-                        </span>
+                    <a 
+                        href="https://drive.google.com/file/d/1IMQQOXsznXfXZDxQekpWwAJMHhM-xCvv/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
 
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-int')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
-
-                <div class="course-card glass-card">
-                    <img src="img/curso scouting.png" alt="Curso 2 Título" class="course-img">
-                    <h3>Scouting Integral en el fútbol</h3>
-                    <p class="course-desc">El Scouting en todos sus sentidos, profundizado.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$200.000 (Pesos argentinos) - 170 uSd </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-scout')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
-
-   
-
-                 <div class="course-card glass-card">
-                    <img src="img/curso dron.png" alt="Curso 3 Título" class="course-img">
-                    <h3>Dron en el fútbol</h3>
-                    <p class="course-desc">Conocé, aprendé y aplicá esta herramienta moderna en tu día a día.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$100.000 (Pesos argentinos) - 75 uSd </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-dron')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
-
-                 
-
-                 <div class="course-card glass-card">
-                    <img src="img/curso longomatch.png" alt="Curso 3 Título" class="course-img">
-                    <h3>Longomatch Premium</h3>
-                    <p class="course-desc">Aprendé desde 0, hasta su totalidad. De las mejores herramientas del mercado.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$150.000 (Pesos argentinos) - 115 uSd </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-long')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
-
-                 <div class="course-card glass-card">
-                    <img src="img/curso app.png" alt="Curso 3 Título" class="course-img">
-                    <h3>Análisis de la Pelota Parada</h3>
-                    <p class="course-desc">Sacá ventaja en los partidos aprendiendo a analizar en profundidad esta faceta del juego.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$100.000 (Pesos argentinos) - 75 uSd </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-p.p')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
-
-                 
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-int')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
                 </div>
-        </section>
+            </div>
 
-                <hr class="section-separator">
+            <div class="course-card glass-card">
+                <img src="img/curso scouting.png" alt="Curso 2 Título" class="course-img">
+                <h3>Scouting Integral en el fútbol</h3>
+                <p class="course-desc">El Scouting en todos sus sentidos, profundizado.</p>
+                    <span class="course-price">$200.000 (Pesos argentinos) - 170 uSd </span>
+                                    <div class="course-footer">
 
-        <section class="individual-courses-section">
-            <h2>Próximamente</h2>
-            <div class="courses-grid">
+                    <a 
+                        href="https://drive.google.com/file/d/1waxW0dKsJPL5JFp-GnGaQRayIoLPuspY/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+                    
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-scout')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
 
-                <div class="course-card glass-card">
-                    <img src="img/curso analisis tactico.png" alt="Curso 3 Título" class="course-img">
-                    <h3>Análisis Táctico</h3>
-                    <p class="course-desc">Potenciá tus conocimientos de táctica y aplicalos en tu equipo.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$150.000 (Pesos argentinos) - 115 uSd </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-tact')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
+             <div class="course-card glass-card">
+                <img src="img/curso dron.png" alt="Curso 3 Título" class="course-img">
+                <h3>Dron en el fútbol</h3>
+                <p class="course-desc">Conocé, aprendé y aplicá esta herramienta moderna en tu día a día.</p>
+                    <span class="course-price">$100.000 (Pesos argentinos) - 75 uSd </span>
+                                    <div class="course-footer">
 
-                <div class="course-card glass-card">
-                    <img src="img/curso estrategia operativa.png" alt="Curso 3 Título" class="course-img">
-                    <h3>Estrategia Operativa</h3>
-                    <p class="course-desc">3 pasos: Conocé a tu oponente, prepará a tu equipo y armá el plan del partido.</p>
-                    <div class="course-footer">
-                        <span class="course-price">$200.000 (Pesos argentinos) - 150 uSd </span>
-                        <button 
-                            class="btn-add-cart small-btn" 
-                            onclick="agregarAlCarrito('curso-f-estr')"
-                            style="cursor: pointer;"
-                        >
-                            Añadir al Carrito
-                        </button>
-                                        </div>
-                </div>
+                    <a 
+                        href="https://drive.google.com/file/d/1htikQ6bBgY8P24EE6HRbyIvp9f-9OQhv/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+                    
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-dron')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
 
-                        </section>
+             <div class="course-card glass-card">
+                <img src="img/curso longomatch.png" alt="Curso 3 Título" class="course-img">
+                <h3>Longomatch Premium</h3>
+                <p class="course-desc">Aprendé desde 0, hasta su totalidad. De las mejores herramientas del mercado.</p>
+                    <span class="course-price">$150.000 (Pesos argentinos) - 115 uSd </span>
+                                    <div class="course-footer">
 
+                    <a 
+                        href="https://drive.google.com/file/d/1Lk8L661bUCxI88Kv-1XDtXpZeVAinxld/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+                    
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-long')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
 
-    </main>
+             <div class="course-card glass-card">
+                <img src="img/curso app.png" alt="Curso 3 Título" class="course-img">
+                <h3>Análisis de la Pelota Parada (Fútbol)</h3>
+                <p class="course-desc">Sacá ventaja en los partidos aprendiendo a analizar en profundidad esta faceta del juego.</p>
+                    <span class="course-price">$100.000 (Pesos argentinos) - 75 uSd </span>
+                                    <div class="course-footer">
+
+                    <a 
+                        href="https://drive.google.com/file/d/1pp1WrQuec93kMawhx3of92PANHzCXR7T/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+                    
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-p.p')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+        </section> <hr class="section-separator"> 
+
+    <section class="individual-courses-section">
+        <h2>Próximamente</h2>
+        <div class="courses-grid">
+
+            <div class="course-card glass-card">
+                <img src="img/curso analisis tactico.png" alt="Curso 3 Título" class="course-img">
+                <h3>Análisis Táctico (Fútbol)</h3>
+                <p class="course-desc">Potenciá tus conocimientos de táctica y aplicalos en tu equipo.</p>
+                    <span class="course-price">$150.000 (Pesos argentinos) - 115 uSd </span>
+                    
+                                    <div class="course-footer">
+
+                    <a 
+                        href="https://drive.google.com/file/d/1Ib8s9Rur6J2ejLW_yd4G75I0zI1N47z7/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+                    
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-tact')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <div class="course-card glass-card">
+                <img src="img/curso estrategia operativa.png" alt="Curso 3 Título" class="course-img">
+                <h3>Estrategia Operativa (Fútbol)</h3>
+                <p class="course-desc">3 pasos: Conocé a tu oponente, prepará a tu equipo y armá el plan del partido.</p>
+                    <span class="course-price">$200.000 (Pesos argentinos) - 150 uSd </span>
+                                    <div class="course-footer">
+
+                    <a 
+                        href="https://drive.google.com/file/d/1cVBBLUxFDBtxQQvsMPo7mWTSb5a_brCL/view?usp=sharing" 
+                        target="_blank" 
+                        class="btn-info small-btn"
+                        style="cursor: pointer;"
+                    >
+                        Más info
+                    </a>
+                    
+                    <button 
+                        class="btn-add-cart small-btn" 
+                        onclick="agregarAlCarrito('curso-f-estr')"
+                        style="cursor: pointer;"
+                    >
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
     
     <!-- =====================================================
      FOOTER
@@ -253,17 +311,13 @@ HEADER
 </footer>
 
 
-<div id="carrito-contenedor">
-    <h2>🛒 Tu Carrito de Compras</h2>
-    <ul id="lista-items-carrito">
-        </ul>
-    <p>Total: <span id="carrito-total">$0.00</span></p>
-    <button id="btn-finalizar-compra" style="display: none;">
-        Finalizar Compra
-    </button>
-</div>
 
 <script src="js/carrito.js"></script>
+
+<a href="carrito.html" id="carrito-flotante-btn" aria-label="Carrito de Compras" title="Ver Carrito">
+    🛒
+    <span id="carrito-contador-flotante" class="contador-vacio">0</span>
+</a>
 
 </body>
 </html>
