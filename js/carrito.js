@@ -76,6 +76,8 @@ function actualizarCarritoUI() {
     const btnFinalizar = document.getElementById('btn-finalizar-compra');
     const contadorUI = document.getElementById('carrito-contador'); 
     const opcionesPagoUI = document.getElementById('opciones-pago-contenedor'); 
+    // AGREGAR: Referencia al contador flotante
+    const contadorFlotanteUI = document.getElementById('carrito-contador-flotante'); // <--- 🚨 ESTO ES LO NUEVO 🚨
     
 
     // 2. LÓGICA DE DIBUJO DE LA LISTA
@@ -131,17 +133,28 @@ function actualizarCarritoUI() {
     if (opcionesPagoUI) opcionesPagoUI.style.display = 'none';
 
 
-    // 4. LÓGICA DE ACTUALIZACIÓN DEL CONTADOR (Header)
+    // 4. LÓGICA DE ACTUALIZACIÓN DEL CONTADOR (Header y FLOTANTE) <--- 🚨 TÍTULO MODIFICADO 🚨
+    const cantidadItems = carrito.length;
+   // Actualiza el contador del Header (contadorUI)
     if (contadorUI) {
-        contadorUI.textContent = carrito.length; 
-        if (carrito.length > 0) {
+        contadorUI.textContent = cantidadItems; 
+        if (cantidadItems > 0) {
             contadorUI.classList.remove('contador-vacio'); 
         } else {
             contadorUI.classList.add('contador-vacio'); 
         }
     }
+    
+    // 🚨 AGREGAR: Lógica para actualizar el contador FLOTANTE 🚨
+    if (contadorFlotanteUI) {
+        contadorFlotanteUI.textContent = cantidadItems; 
+        if (cantidadItems > 0) {
+            contadorFlotanteUI.classList.remove('contador-vacio'); 
+        } else {
+            contadorFlotanteUI.classList.add('contador-vacio'); 
+        }
+    }
 }
-
 
 // ============================================
 // 4. FINALIZAR COMPRA (Muestra las opciones con Logos/Links)
